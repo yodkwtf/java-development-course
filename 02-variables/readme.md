@@ -132,3 +132,16 @@ The mathematical operators in Java are -
 - -- (subtract 1)
 - += (add by - increase value by number on the right)
 - -= (subtract by - decreases value by number on right)
+
+## Type Casting
+
+Variable values can be casted from one type to another. It can be done by using a parenthesis before the variable and putting the required type in that parenthesis.
+
+```java
+int a = 20;
+int b = 3;
+
+
+System.out.println(a / b) // 6
+System.out.println((double)a / b) // 6.666...
+```
