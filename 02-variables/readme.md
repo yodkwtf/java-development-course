@@ -86,7 +86,9 @@ System.out.println("Population is " + population); // Population is 95000000000L
 ```
 
 > **FAQ**
+>
 > Ques: If I have specifically declared that a variable is to be of type long, why do I need to state this again with the "L" suffix on the value?
+>
 > Ans: The data type declaration and the number literal are interpreted separately, so the compiler can't infer the data type when considering the number literal.
 
 #### double
@@ -102,6 +104,7 @@ System.out.println(" CGPA - " + gradePoint); // CGPA - 8.46
 ```
 
 > Note!
+>
 > Always use double instead of int for math calculations. Otherwise, 20/3 which is 6.67 (double) will be turned into 6 (int) and result in falsy calculations.
 
 ## Math Operations
@@ -141,7 +144,6 @@ Variable values can be casted from one type to another. It can be done by using 
 int a = 20;
 int b = 3;
 
-
 System.out.println(a / b) // 6
-System.out.println((double)a / b) // 6.666...
+System.out.println((double) a / b) // 6.666...
 ```
