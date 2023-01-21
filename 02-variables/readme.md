@@ -103,3 +103,32 @@ System.out.println(" CGPA - " + gradePoint); // CGPA - 8.46
 
 > Note!
 > Always use double instead of int for math calculations. Otherwise, 20/3 which is 6.67 (double) will be turned into 6 (int) and result in falsy calculations.
+
+## Math Operations
+
+Always wrap maths operations in brackets when they are performed within a string.
+
+```java
+int a = 5;
+int b = 7;
+
+// wrong way
+System.out.println("Sum will be " + a + b + " apples"); // ❌ Sum will be 57 apples
+
+// right way
+System.out.println("Sum will be " + (a + b) + " apples"); // ✔ Sum will be 12 apples
+```
+
+This is done to provide some kind of order for things to happen.
+
+The mathematical operators in Java are -
+
+- \+ (plus)
+- \- (minus)
+- \* (multiplication)
+- / (division)
+- % (modulus - returns the remainder)
+- ++ (add 1)
+- -- (subtract 1)
+- += (add by - increase value by number on the right)
+- -= (subtract by - decreases value by number on right)
