@@ -29,7 +29,7 @@ public class Bus {
 
 #### int
 
-- Uses **4 bytes** of memory
+- Uses **4 bytes (32 bits)** of memory
 - Can store any value in 2 billion range
 - Highest value it can store is _2,147,483,647_
 
@@ -55,10 +55,10 @@ String statement = name + " has " + amount + " " + item
 System.out.println(statement) // Deekayy has 4 bats
 ```
 
-#### Char
+#### char
 
 - Used to store only single characters
-- Java only allocates **2 bytes** for char
+- Java only allocates **2 bytes (16 bits)** for char
 - No matter what character we store, it only takes 2 bytes in memory
 - Char values should be wrapped in **single quotes ('A')**
 - `char letter = 'F'` vs `String letter = "F"` can be a diff b/w _2 bytes_ vs _48 bytes_
@@ -70,3 +70,36 @@ char scienceGrade = 'C';
 System.out.println("Maths - " + mathGrade); // Maths - A
 System.out.println("Science - " + scienceGrade); // Science - C
 ```
+
+#### long
+
+- Used to store large whole numbers
+- Takes **8 bytes (64 bits)** of memory
+- Use them if you expect the variable to cross 2 billion range (for eg, YouTube views)
+- Need to put an **L** at the end of variable value to let Java know it's going to be a long integer
+
+```java
+long dailyGoogleSearches = 8000000000L;
+long population = 95_000_000_000L; // makes it easier to read
+
+System.out.println("Population is " + population); // Population is 95000000000L
+```
+
+> **FAQ**
+> Ques: If I have specifically declared that a variable is to be of type long, why do I need to state this again with the "L" suffix on the value?
+> Ans: The data type declaration and the number literal are interpreted separately, so the compiler can't infer the data type when considering the number literal.
+
+#### double
+
+- Used to store decimals
+- Takes **8 bytes (64 bits)** of memory
+- Can take up to 15 decimal places
+
+```java
+double gradePoint = 8.46;
+
+System.out.println(" CGPA - " + gradePoint); // CGPA - 8.46
+```
+
+> Note!
+> Always use double instead of int for math calculations. Otherwise, 20/3 which is 6.67 (double) will be turned into 6 (int) and result in falsy calculations.
