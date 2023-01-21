@@ -54,3 +54,19 @@ String item = "bats"
 String statement = name + " has " + amount + " " + item
 System.out.println(statement) // Deekayy has 4 bats
 ```
+
+#### Char
+
+- Used to store only single characters
+- Java only allocates **2 bytes** for char
+- No matter what character we store, it only takes 2 bytes in memory
+- Char values should be wrapped in **single quotes ('A')**
+- `char letter = 'F'` vs `String letter = "F"` can be a diff b/w _2 bytes_ vs _48 bytes_
+
+```java
+char mathGrade = 'A';
+char scienceGrade = 'C';
+
+System.out.println("Maths - " + mathGrade); // Maths - A
+System.out.println("Science - " + scienceGrade); // Science - C
+```
