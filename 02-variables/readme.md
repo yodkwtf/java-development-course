@@ -38,3 +38,19 @@ int apples = 6;
 apples += 4;
 System.out.println(apples) // 10
 ```
+
+#### String
+
+- Used to store text
+- Unlike _int_ varies in memory
+- Empty text takes _24 bytes_ and the more text we add more memory it takes
+- Create string value using **double quotes ("some text")**
+- Two strings or integers can be concatenated using the **+** operator
+
+```java
+String name = "Deekayy";
+int amount = 4;
+String item = "bats"
+String statement = name + " has " + amount + " " + item
+System.out.println(statement) // Deekayy has 4 bats
+```
