@@ -1,4 +1,4 @@
-public class Bus {
+public class Int {
   public static void main(String[] args) {
     int passengers = 0;
 
