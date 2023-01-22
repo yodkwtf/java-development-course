@@ -177,7 +177,7 @@ scanner.close()
 
 Also, always close the scanner instance when you are done with it to avoid any memory leak.
 
-The first `nextLine()` after `nextInt()` or `nextDouble()` gets skipped and the solution is to put a throwaway or temporary `nextLine()` in between which will be ignored.
+The first `nextLine()` after `nextInt()`, `nextLong()`, or `nextDouble()` gets skipped and the solution is to put a throwaway or temporary `nextLine()` in between which will be ignored.
 
 > There are a bunch of escape characters that can be used to special things.
 >
