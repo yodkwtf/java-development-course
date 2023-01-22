@@ -100,7 +100,7 @@ System.out.println("Population is " + population); // Population is 95000000000L
 ```java
 double gradePoint = 8.46;
 
-System.out.println(" CGPA - " + gradePoint); // CGPA - 8.46
+System.out.println("CGPA - " + gradePoint); // CGPA - 8.46
 ```
 
 > Note!
@@ -147,3 +147,38 @@ int b = 3;
 System.out.println(a / b) // 6
 System.out.println((double) a / b) // 6.666...
 ```
+
+## Scanner
+
+Contains methods that can be used to scan for user input.
+
+- `nextInt()` - used to scan Integers
+- `nextDouble()` - used to scan Decimals
+- `nextLine()` - used to scan Text
+
+Scanner with all of its logic and methods is defined inside _Java.utils_ and therefore we need to import it first.
+
+```java
+import java.util.Scanner;
+
+// create a new scanner instance
+Scanner scanner = new Scanner(System.in);
+
+// use scanner methods to get user data
+System.out.println("What's your name?");
+String name = scanner.nextLine();
+
+System.out.println("What's your age?");
+int age = scanner.nextInt();
+
+// close the scanner instance
+scanner.close()
+```
+
+Also, always close the scanner instance when you are done with it to avoid any memory leak.
+
+The first `nextLine()` after `nextInt()` or `nextDouble()` gets skipped and the solution is to put a throwaway or temporary `nextLine()` in between which will be ignored.
+
+> There are a bunch of escape characters that can be used to special things.
+>
+> **\n** can be used to add a new line or line break whereas **\t** is used for adding a tab space.
