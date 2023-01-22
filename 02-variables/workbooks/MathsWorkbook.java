@@ -1,3 +1,5 @@
+package workbooks;
+
 public class MathsWorkbook {
   public static void main(String[] args) {
     // given data

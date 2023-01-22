@@ -1,3 +1,5 @@
+package workbooks;
+
 public class WorkBook {
   public static void main(String[] args) {
     int points = 0;

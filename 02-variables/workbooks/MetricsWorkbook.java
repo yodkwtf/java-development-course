@@ -1,3 +1,5 @@
+package workbooks;
+
 public class MetricsWorkbook {
   public static void main(String[] args) {
     // given metrics
