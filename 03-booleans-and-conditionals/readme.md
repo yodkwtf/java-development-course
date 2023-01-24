@@ -42,3 +42,47 @@ String.equals(String)
 
    - `=` sets a variable equal to a new value
    - `==` compares 2 values and returns a boolean
+
+#### If-Else Statements
+
+- Runs code only if a condition is true
+- A comparison within a if statement is called a _condition_
+
+```java
+int grade = 65;
+
+if (grade > 50) {
+System.out.println("You passed!");
+}
+```
+
+- When if condition is false, Java runs the _else_ statement
+
+```java
+int grade = 65;
+
+if (grade > 80) { // false
+   System.out.println("You topped!");
+} else {
+   System.out.println("You passed but didn't top!");
+}
+```
+
+> We need to be careful while putting the conditions, i.e., keep `greater than and equal` to in mind too.
+
+##### Nested If-Else Statements
+
+- Between if and else, more if-else statements can be added to test many conditions.
+- Java only runs the first statement that ends up being true and ignores the rest.
+
+```java
+int grade = 75;
+
+if (grade >= 90) {
+   System.out.println("You got an A+ grade!");
+} else if (grade >= 80) {
+   System.out.println("You got an A grade!");
+} else {
+   System.out.println("You failed and got an F grade!");
+}
+```
