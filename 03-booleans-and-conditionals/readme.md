@@ -43,7 +43,7 @@ String.equals(String)
    - `=` sets a variable equal to a new value
    - `==` compares 2 values and returns a boolean
 
-#### If-Else Statements
+### If-Else Statements
 
 - Runs code only if a condition is true
 - A comparison within a if statement is called a _condition_
@@ -70,7 +70,7 @@ if (grade > 80) { // false
 
 > We need to be careful while putting the conditions, i.e., keep `greater than and equal` to in mind too.
 
-##### Nested If-Else Statements
+#### Nested If-Else Statements
 
 - Between if and else, more if-else statements can be added to test many conditions.
 - Java only runs the first statement that ends up being true and ignores the rest.
@@ -84,5 +84,41 @@ if (grade >= 90) {
    System.out.println("You got an A grade!");
 } else {
    System.out.println("You failed and got an F grade!");
+}
+```
+
+### Logical Operators
+
+- Can connect many comparisons into one condition.
+- Most common ones are **OR** and **AND**.
+
+#### OR (`||`)
+
+- returns true if any one comparison is true
+
+```java
+int chemGrade = 65;
+int engGrade = 75;
+
+if (chemGrade > 70 || engGrade > 70) { // true
+System.out.println("You got a scholarship!!!"); // runs
+} else {
+System.out.println("Haha noob");
+}
+```
+
+#### AND (`&&`)
+
+- returns true if any all of the comparisons are true
+- if any one of the condition is false, entire comparison becomes false
+
+```java
+int credits = 52;
+double GPA = 3.45;
+
+if (credits >= 50 && GPA > 3.5) { // false
+System.out.println("You got a diploma!!!");
+} else {
+System.out.println("No diploma"); // runs
 }
 ```
