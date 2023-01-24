@@ -35,7 +35,7 @@ There are 8 types of comparison operators.
 String.equals(String)
 ```
 
-##### Key Points to Remember
+#### Key Points to Remember
 
 1. Never use `==` or `!=` to compare String values. It produces weird results.
 2. Don't confuse `=` and `==`.
@@ -43,7 +43,7 @@ String.equals(String)
    - `=` sets a variable equal to a new value
    - `==` compares 2 values and returns a boolean
 
-### If-Else Statements
+## If-Else Statements
 
 - Runs code only if a condition is true
 - A comparison within a if statement is called a _condition_
@@ -87,7 +87,7 @@ if (grade >= 90) {
 }
 ```
 
-### Logical Operators
+## Logical Operators
 
 - Can connect many comparisons into one condition.
 - Most common ones are **OR** and **AND**.
