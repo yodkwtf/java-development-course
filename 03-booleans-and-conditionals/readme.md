@@ -122,3 +122,70 @@ System.out.println("You got a diploma!!!");
 System.out.println("No diploma"); // runs
 }
 ```
+
+## Switch Statements
+
+- Compares a value against a list of cases
+- When the value matches to one of the given cases then the code for that particular case is executed
+- If values doesn't match any of the cases, the default case code runs
+
+> Note: When the value matches a case, it turns on the switch and the code of every following case is run. To avoid this we have the **break** keyword.
+
+#### `Break` Keyword
+
+- Used to break the switch statement
+- When a case is met, this keyword is used to break out of the switch statements so that the rest of the cases don't get executed
+
+```java
+int day = 5; // Friday
+
+switch (day) {
+case 1:
+   System.out.println("Monday");
+   break;
+case 2:
+   System.out.println("Tuesday");
+   break;
+case 3:
+   System.out.println("Wednesday");
+   break;
+case 4:
+   System.out.println("Thursday");
+   break;
+case 5:
+   System.out.println("Friday");
+   break;
+case 6:
+   System.out.println("Saturday");
+   break;
+case 7:
+   System.out.println("Sunday");
+   break;
+default:
+   System.out.println("Please enter a valid day...");
+}
+```
+
+The above code will output -
+
+```sh
+>> Friday
+```
+
+However, if we didn't add break statement, the output would be -
+
+```sh
+>> Friday
+>> Saturday
+>> Sunday
+>> Please enter a valid day...
+```
+
+#### `Switch` vs `If-Else`
+
+- If-Else are more suitable with conditions and ranges where as switch is better when there are a finite no. of cases to compare with one value.
+- If there are multiple conditions if-else if more suitable
+- 90-95% of times, if-else will be used
+
+**if-else** runs a code if a condition is _true_
+**switch** runs a code if an argument matches a case
