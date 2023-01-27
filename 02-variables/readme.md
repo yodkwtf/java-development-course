@@ -182,3 +182,40 @@ The first `nextLine()` after `nextInt()`, `nextLong()`, or `nextDouble()` gets s
 > There are a bunch of escape characters that can be used to special things.
 >
 > **\n** can be used to add a new line or line break whereas **\t** is used for adding a tab space.
+
+## Delimiters
+
+- White space that separates input data
+- The scanner methods like **nextInt()**, **nextLong()**, **nextDouble()**, and **next()** skip the delimiter value
+- Delimiter values are the white space between multiple user inputs. For eg, if a user enter `20 45 234`, the empty space in between are the delimiters.
+- `nextInt()` method ignores these empty spaces and only captures the next integer values
+
+#### scan.nextLine()
+
+- It reads everything line by line
+- unlike the above methods, this reads all the user inputs as one string text and doesn't ignore any white space
+- For eg, if a user enters -
+
+```sh
+I am Batman
+```
+
+- `next()` method will be called 3 times for each of the three words since they are separated by white spaces and hence we'll get 3 different string values - "I", "am", and "Batman"
+- `nextLine()` method will be used only once since it won't ignore the spaces in between and we'll get one single string - "I am Batman"
+
+#### `scan.nextLine()` trap
+
+We have to use a throwaway scan.nextLine() method after the other scanner methods since when we read values for other methods from the user inputs, the line doesn't end.
+
+Since `.nextLine()` doesn't ignore the spaces it starts from the same place we read the last integer on and hence the first `.nextLine()` captures the remaining line of the other scanner methods and the next `.nextLine()` is used for our purpose.
+
+For eg: User enters an integer 46 and then enters a string as follows -
+
+```sh
+46 <EMPTY SPACE>
+Hello John
+```
+
+Here `.nextInt()`will read 46 and `nextLine()` will read that remaining empty space on that line therefore we'll need to add an extra `nextLine()`.
+
+If we used `next()` instead of `nextLine()` after `nextInt()` it would have ignored the empty space and moved to the next line. But then it would have only captured "Hello" and not "John" since it doesn't capture empty spaces.
