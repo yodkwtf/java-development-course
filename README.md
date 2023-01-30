@@ -9,6 +9,7 @@ For more info about a specific topic, navigate to that topic's directory and che
 1. [Java Fundamentals](/01-java-fundamentals/)
 2. [Variables](/02-variables/)
 3. [Booleans and Conditionals](/03-booleans-and-conditionals/)
+4. [Functions](/04-functions/)
 
 #### Resources
 
