@@ -44,3 +44,26 @@ public static void main(String[] args) {
   calculateArea(9.3, 21); // 195.3
 }
 ```
+
+## Return Statements
+
+- Functions can return a value at the end
+- Return type must be specified at the time of function declaration
+- Return type are means what type value will be returned from the function
+
+```java
+// - <return_type> -
+public double calcArea(double len, double bth) {
+  double area = len * bth;
+  return area; // <return value>
+}
+```
+
+- Function call stores the returned value and later it can be stored inside a variable
+
+```java
+double curArea = calcArea(10.0, 5.0);
+System.out.println(curArea) // 50.0
+```
+
+- Return statement stops the function execution then and there and no further lines of code are run inside that function
