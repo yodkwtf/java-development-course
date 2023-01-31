@@ -101,3 +101,84 @@ public static String printText(String name, int age) {
   return msg;
 }
 ```
+
+## Scope
+
+Scope refers where the variable can be accessed from. They are either class scoped or function scoped.
+
+#### Function Scope
+
+A variable inside a function can only run inside the function scope. It does not exist outside the function it is declared in.
+
+```java
+public static void main(String[] args) {
+  System.out.println(apples); // Throws error
+  someFunction();
+}
+
+public static void someFunction() {
+  int apples = 5;
+  System.out.println(apples); // Prints `5`
+}
+```
+
+In the above code,
+
+- Since `apples` variable is declared inside `someFunction`, it can be accessed (or printed) in the main function. We'll get an error.
+- Similarly, if the variable had been declared in the `main` function, we wouldn't have been able to use it in `someFunction`.
+
+#### Class Scope
+
+A variable in a class exists in class scope. Scope of a class spans the entire code inside the class. Basically any variable declared in the class scope is accessible in anywhere inside the class.
+
+```java
+public class Scope {
+  static int dogs = 5;
+
+  public static void main(String[] args) {
+    System.out.println(dogs); // Prints `5`
+    someFunction();
+  }
+
+  public static void someFunction() {
+    System.out.println(dogs); // Prints `5`
+  }
+}
+```
+
+## Built-In Functions
+
+- Functions that are already made for us
+- `println(arg)` is a built-in void function that just prints the argument we pass and doesn't return anything
+
+Basically, behind the scenes somewhere in Java there is a code like
+
+```java
+public void println(String x) {
+  // many lines of code
+}
+```
+
+- `println()` function isn't local to our class, it's attached to some other class and hence we need to use `System.out` before using it
+
+#### Math Functions
+
+There are several built-in maths functions already made in Java for us to use like `log`, `sin` or `cos`.
+
+- Usually math functions expect a _double_ parameter and return a _double_ value.
+- Some math functions expect more than 1 parameter. For eg, `Math.pow(2,4)` to calculate powers.
+- There are 1000s of such functions and there is no need to memorize them all. **Use Google**.
+
+```java
+public static void main(String[] args) {
+  double sine = Math.sin(1.2);
+  System.out.println("sine: " + sine); // 0.9320390859672264
+
+  double power = calcPower(2, 4);
+  System.out.println("power: " + power); // 16.0
+}
+
+public static double calcPower(double base, double exponent) {
+  return Math.pow(base, exponent);
+}
+```
