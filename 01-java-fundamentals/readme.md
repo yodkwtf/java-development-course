@@ -27,14 +27,6 @@ public class HelloWorld {
 }
 ```
 
-#### Print Statement
-
-- `println(msg)` method is used to print msgs to console
-
-```java
-System.out.println("Hello World");
-```
-
 #### Running the Code
 
 Once we run the code, Java looks for the entry point which is the main function. Once it finds the entry point, it starts executing whatever code is inside it.
@@ -57,6 +49,40 @@ If there are any errors Java won't run the code and throw an error displaying th
    ```
 
 Always recompile code after making any changes.
+
+## Print Statement
+
+- `println(msg)` method is used to print msgs to console
+
+```java
+System.out.println("Hello World");
+```
+
+#### `print` vs `println`
+
+- `println` prints text and moves to a new line
+
+  ```java
+  System.out.println(" a ");
+  System.out.println(" b ");
+  System.out.println(" c ");
+  ```
+
+  ```sh
+  >> a
+  >> b
+  >> c
+  ```
+
+- `print ` prints text but it does not move to a new line. So, ensuing print calls print on the same line
+  ```java
+  System.out.println(" a ");
+  System.out.println(" b ");
+  System.out.println(" c ");
+  ```
+  ```sh
+  >> a b c
+  ```
 
 ## Comments
 
