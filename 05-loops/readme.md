@@ -44,3 +44,42 @@ Final Output -
 2
 3
 ```
+
+## While Loops
+
+- Keeps running code **while** something is **true**
+- Only thing a while loop needs is a **condition**
+
+```java
+int num = 25;
+
+while (num <= 30) {
+  System.out.println(num);
+  num++;
+}
+```
+
+In the above code,
+
+- Initially since the condition `num<=30` is true we enter the while loop
+- In the first iteration **num** is printed as 25 and then we increment **num** by 1
+- It becomes 26 and next iteration prints 26 and increments **num** again
+- The loop continues until 30 is printed and **num** becomes 31
+- Now the condition `num<=30` becomes false and we break out of the loop
+
+#### Incorrect Code ❌
+
+```java
+int num = 25;
+
+while (num <= 30) {
+  System.out.println(num);
+}
+```
+
+In the above code,
+
+- The condition `num <=30` will always be true
+- The loop will run forever and will eventually crash the program
+
+> In real world, we should have used a for loop for this example since we know how many times we need to run the code since we know the ending condition, i.e., when num becomes 31.
