@@ -83,3 +83,47 @@ In the above code,
 - The loop will run forever and will eventually crash the program
 
 > In real world, we should have used a for loop for this example since we know how many times we need to run the code since we know the ending condition, i.e., when num becomes 31.
+
+## `Break` and `Continue`
+
+The `break` and `continue` statements give us more control over our loops.
+
+#### Continue
+
+- Skips an iteration and continues to the next iteration
+
+```java
+for (int i = 1; i <= 5; i++) {
+  if (i % 2 == 0) {
+    continue; // skips the iteration if above condition is true
+  }
+  System.out.println(i);
+}
+```
+
+Output -
+
+```sh
+1
+2
+5
+```
+
+#### Break
+
+- Breaks the loop and stops all the upcoming iterations
+
+```java
+for (int i = 1; i <= 5; i++) {
+  if (i % 2 == 0) {
+    break; // exits the loop if above condition is true
+  }
+  System.out.println(i);
+}
+```
+
+Output -
+
+```sh
+1
+```
