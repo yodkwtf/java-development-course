@@ -77,6 +77,9 @@ public class Challenge {
     } else {
       System.out.println("\nIt's a tie!");
     }
+
+    // Close scanner
+    scan.close();
   }
 
   /**
