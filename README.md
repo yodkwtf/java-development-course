@@ -11,6 +11,7 @@ For more info about a specific topic, navigate to that topic's directory and che
 3. [Booleans and Conditionals](/03-booleans-and-conditionals/)
 4. [Functions](/04-functions/)
 5. [Loops](/05-loops/)
+6. [Arrays](/06-arrays/)
 
 #### Resources
 
