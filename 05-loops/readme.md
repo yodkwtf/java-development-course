@@ -127,3 +127,38 @@ Output -
 ```sh
 1
 ```
+
+## Nested Loops
+
+- Nested loops are loops inside loops
+- Have an **outer loop** and an **inner loop**
+
+```java
+for (int i = 1; i <= 3; i++) {
+  for (int j = 1; j <= 3; j++) {
+    System.out.println("i: " + i + ", j: " + j);
+  }
+}
+```
+
+In the above code,
+
+- Every iteration of outer loop will run the inner loop 3 times (From j=1 to j=3)
+- Outer loop itself will also have 3 iterations (From i=1 to i=3)
+- Hence the loop will run a total of 3x3 = 9 times and the output will be -
+
+```sh
+i: 1, j: 1
+i: 1, j: 2
+i: 1, j: 3
+i: 2, j: 1
+i: 2, j: 2
+i: 2, j: 3
+i: 3, j: 1
+i: 3, j: 2
+i: 3, j: 3
+```
+
+#### Applications of Nested Loops
+
+- Useful when working with 2D arrays
