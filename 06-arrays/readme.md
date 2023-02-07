@@ -86,7 +86,7 @@ System.out.println(Arrays.toString(names)); // [John, Alice, Charlie]
 
 #### `Arrays.toString()`
 
-It is used to convert arrays into string format
+- Used to convert arrays into string format
 
 ```java
 import java.util.Arrays;
@@ -100,8 +100,8 @@ System.out.println(Arrays.toString(names)); // [John,  Mary, Bob]
 #### Adding New Elements
 
 - You cannot change the size of the array once it's created
-- If more new elements are need to be added then create a new array with larger size and copy the previous elements into
-- Manually add the new elements into remaining index
+- If more new elements are need to be added then create a new array with larger size and copy the previous elements into it using a loop
+- Manually add the new elements into remaining index of the new array
 
 ```java
 String[] names = { "John", "Mary", "Bob" };
