@@ -40,3 +40,32 @@ System.out.println(names[1]); // Mary
 System.out.println(names[2]); // Bob
 System.out.println(names[3]); // Array Index Error
 ```
+
+## Looping Arrays
+
+Arrays can be looped over so we don't need to perform a single operation for every single element one by one.
+
+#### The `length` property
+
+- Returns the number of elements in an array
+
+```java
+String[] names = { "John", "Mary", "Bob" };
+System.out.println(names.length); // 3
+```
+
+- Used a lot when looping over arrays
+
+```java
+String[] names = { "John", "Mary", "Bob" };
+
+for (int i = 0; i < names.length; i++) {
+  System.out.println(names[i]);
+}
+```
+
+#### Tips
+
+- Always use `length` property to count elements, never do it yourself
+- Be careful while using the condition, since the last element will always have the index 1 less than the array's length
+- In the above case, if we used `i <= names.length` it will throw an error since at one point `names.length` will be 3 and if we enter the loop with `i=3` we won't get any element since last element has the index 2.
