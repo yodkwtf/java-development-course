@@ -118,3 +118,33 @@ for (int i = 0; i < names.length; i++) {
 newNames[3] = "David";
 newNames[4] = "Eve";
 ```
+
+## Reference Trap
+
+- Variables don't store arrays, they store the reference that points to the created array in memory
+- We can have more variables that store a reference which points to the same array, for example -
+
+```java
+int[] nums1 = {1, 2, 3};
+int[] nums2 = nums1;
+```
+
+This is a bad practice because it allows us to manipulate `nums1` through `nums2`.
+
+```java
+nums2[1] = 5;
+```
+
+It will change the value of the second element for both the nums array even though we only did it for one of them. This happens since both of them are pointing to the same array in memory.
+
+Hence, **do not set array variables equal to one another**.
+
+> The state of a variable should not change because you updated another.
+
+#### What to do when we want 2 variables to have the same array?
+
+Create a new array for the second one and copy every value from the first into the new array using a for loop.
+
+**Note**: _This can also be done using the `Array.copyOf(arrayToCopyFrom, lengthToCopy)` method._
+
+Otherwise, if we set array variables equal to one another, they'll point to the same array in memory and mutating one would mutate both (PITFALL).
