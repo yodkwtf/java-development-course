@@ -69,3 +69,52 @@ for (int i = 0; i < names.length; i++) {
 - Always use `length` property to count elements, never do it yourself
 - Be careful while using the condition, since the last element will always have the index 1 less than the array's length
 - In the above case, if we used `i <= names.length` it will throw an error since at one point `names.length` will be 3 and if we enter the loop with `i=3` we won't get any element since last element has the index 2.
+
+## Updating Arrays
+
+- Use the element index and directly update it's value
+
+```java
+String[] names = { "John", "Mary", "Bob" };
+System.out.println(Arrays.toString(names)); // [John, Mary, Bob]
+
+// Update the value at index 1 and index 2
+names[1] = "Alice";
+names[2] = "Charlie";
+System.out.println(Arrays.toString(names)); // [John, Alice, Charlie]
+```
+
+#### `Arrays.toString()`
+
+It is used to convert arrays into string format
+
+```java
+import java.util.Arrays;
+
+String[] names = { "John", "Mary", "Bob" };
+
+System.out.println(names); // [Ljava.lang.String;@5acf9800 (memory address)
+System.out.println(Arrays.toString(names)); // [John,  Mary, Bob]
+```
+
+#### Adding New Elements
+
+- You cannot change the size of the array once it's created
+- If more new elements are need to be added then create a new array with larger size and copy the previous elements into
+- Manually add the new elements into remaining index
+
+```java
+String[] names = { "John", "Mary", "Bob" };
+
+// Create a new array with a larger size
+String[] newNames = new String[5];
+
+// Copy the elements from the old array to the new array
+for (int i = 0; i < names.length; i++) {
+  newNames[i] = names[i];
+}
+
+// Update the value at index 3 and index 4
+newNames[3] = "David";
+newNames[4] = "Eve";
+```
