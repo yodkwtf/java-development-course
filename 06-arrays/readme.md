@@ -148,3 +148,31 @@ Create a new array for the second one and copy every value from the first into t
 **Note**: _This can also be done using the `Array.copyOf(arrayToCopyFrom, lengthToCopy)` method._
 
 Otherwise, if we set array variables equal to one another, they'll point to the same array in memory and mutating one would mutate both (PITFALL).
+
+## 2-D Arrays
+
+- 2D array is an array that contains arrays
+- Used when data comes in a form of table or a grid
+- Usually needed when we want to create multiple arrays for the same type of items
+
+```java
+// Let's say we want to store marks of 3 students of 3 subjects.
+int[] student1 = { 90, 80, 70 };
+int[] student2 = { 80, 70, 60 };
+int[] student3 = { 70, 60, 50 };
+
+// Store marks in 2D array.
+int[][] marks = {
+  { 90, 80, 70 },
+  { 80, 70, 60 },
+  { 70, 60, 50 }
+};
+
+// Accessing elements using row and column numbers.
+System.out.println(Arrays.toString(marks[0])); // [90, 80, 70]
+System.out.println(marks[0][1]); // 80
+
+// Updating 2D Array
+marks[0][1] = 85;
+System.out.println(marks[0][1]); // 85
+```
