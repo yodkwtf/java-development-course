@@ -243,3 +243,11 @@ marks[1][0] + " " + marks[1][1] + " " + marks[1][2] # 80 70 60
 # Inner loop iterations: j = 0, 1, 2
 marks[2][0] + " " + marks[2][1] + " " + marks[2][2] # 70 60 50
 ```
+
+##### Small Tip on Arrays
+
+- Return an array directly without first storing it into a variable in the following way -
+
+```java
+return new Type[] { element1, element2 };
+```
