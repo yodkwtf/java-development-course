@@ -15,5 +15,6 @@ For more info about a specific topic, navigate to that topic's directory and che
 
 #### Resources
 
-- [Course Workbooks and Challenges](https://www.learnthepart.com/course/2dfda34d-6bbc-4bd5-8f45-d5999de2f514/a0d30d63-16f5-4702-992a-77b560cbeddd)
+- [Mini Projects](/mini-projects/)
 - [Install Java-v17 SDK](https://aws.amazon.com/corretto/?filtered-posts.sort-by=item.additionalFields.createdDate&filtered-posts.sort-order=desc)
+- [Course Workbooks and Challenges](https://www.learnthepart.com/course/2dfda34d-6bbc-4bd5-8f45-d5999de2f514/a0d30d63-16f5-4702-992a-77b560cbeddd)
