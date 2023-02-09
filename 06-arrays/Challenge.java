@@ -160,9 +160,9 @@ public class Challenge {
 
     // Check right diagonal
     for (int i = 0; i < board.length; i++) {
-      if (board[i][i] == 'X') {
+      if (board[i][2 - i] == 'X') {
         count++;
-      } else if (board[i][i] == 'O') {
+      } else if (board[i][2 - i] == 'O') {
         count--;
       }
     }
