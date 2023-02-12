@@ -44,3 +44,7 @@ public static String[] words = {
    - updatePlaceholders(): updates the placeholders when the user makes a correct guess.
    - printPlaceholders(): prints the placeholders.
    - printMissedGuesses(): prints guesses that the user missed.
+
+#### Solutions
+
+This directory has 2 solutions - one by me and one by the course instructors. My solution came out pretty close to theirs expect I used different data types at certain places and handled them accordingly. Rest of the solution was almost exactly the same.
