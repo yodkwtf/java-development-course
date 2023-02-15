@@ -47,3 +47,46 @@ toyota.color = "Green"
 ```
 
 Unless we provide some field values, they are considered as null.
+
+## Constructor
+
+- First thing that runs when you create an object
+- Allows us create and update object properties in a single line
+- The fields should be updated inside the constructor only
+
+#### Creating a Constructor
+
+- Specify a lever of access (public)
+- The name of the class
+- Parameters or the fields that constructor is going to update
+
+```java
+public Car(String make, double price, int year, String color) {
+  // properties
+}
+```
+
+- When calling a constructor we need to pass the values for the fields/constructor parameters
+
+```java
+Car nissan = new Car("Nissan", 10000, 2020, "Green");
+Car toyota = new Car("Toyota", 20000, 2021, "Red");
+```
+
+#### `this` keyword
+
+- Refers to the current object
+- Used to distinguish between parameters and the fields that are updated
+- `this` can be used to update the fields using the passed values for Constructor parameters
+
+```java
+public Car(String make, double price, int year, String color) {
+  // updating fields for that object for which `this` is used
+  this.make = make;
+  this.price = price;
+  this.year = year;
+  this.color = color;
+}
+```
+
+When the constructor is done updating the field values using the values passed for the constructor parameters, our object is fully initialized (created) and the variable used stores the reference to this created object.

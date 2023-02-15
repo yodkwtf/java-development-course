@@ -1,16 +1,21 @@
 public class Main {
   public static void main(String[] args) {
-    Car nissan = new Car();
-    nissan.make = "Nissan";
-    nissan.price = 10000;
-    nissan.year = 2020;
-    nissan.color = "Green";
+    // # NON CONSTRUCTOR WAY
+    // Car nissan = new Car();
+    // nissan.make = "Nissan";
+    // nissan.price = 10000;
+    // nissan.year = 2020;
+    // nissan.color = "Green";
 
-    Car toyota = new Car();
-    toyota.make = "Toyota";
-    toyota.price = 20000;
-    toyota.year = 2021;
-    toyota.color = "Red";
+    // Car toyota = new Car();
+    // toyota.make = "Toyota";
+    // toyota.price = 20000;
+    // toyota.year = 2021;
+    // toyota.color = "Red";
+
+    // # CONSTRUCTOR WAY
+    Car nissan = new Car("Nissan", 10000, 2020, "Green");
+    Car toyota = new Car("Toyota", 20000, 2021, "Red");
 
     System.out.println(nissan.make); // Nissan
     System.out.println(nissan.price); // 10000.0
