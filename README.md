@@ -12,6 +12,7 @@ For more info about a specific topic, navigate to that topic's directory and che
 4. [Functions](/04-functions/)
 5. [Loops](/05-loops/)
 6. [Arrays](/06-arrays/)
+7. [Objects](/07-objects/)
 
 #### Resources
 
