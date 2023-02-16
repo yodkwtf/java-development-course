@@ -12,6 +12,14 @@ public class Car {
     this.color = color;
   }
 
+  // Copy Constructor
+  public Car(Car source) {
+    this.make = source.make;
+    this.price = source.price;
+    this.year = source.year;
+    this.color = source.color;
+  }
+
   // Getters
   public String getMake() {
     return make;

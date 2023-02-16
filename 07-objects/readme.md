@@ -181,3 +181,77 @@ public void setMake(String make) {
 Now even though we have private fields in our class, we have public Getters to get the field values and public setters to update the field values.
 
 > There's a nifty VSCode Extension called **Java Code Generators** that can generate getters and setters for any class with just one command.
+
+## Copy Constructor
+
+- Copy Constructor is used to create an exact copy of an object with the same values of an existing object.
+
+Let's say we need to create an object which has to be the same as another created object. We can't make the 2 objects equal to each other otherwise we'd run into reference trap. For example,
+
+```java
+Car nissan = new Car("Nissan", 10000, 2020, "Green");
+Car nissan2 = nissan; // ❌ wrong practice
+
+// Since both `nissan` and `nissan2` point to the same object in the memory, updating any one would update both of them
+nissan2.setColor("Yellow");
+nissan.getColor(); // Yellow
+nissan2.getColor(); // Yellow
+
+nissan.setColor("Orange");
+nissan.getColor(); // Orange
+nissan2.getColor(); // Orange
+```
+
+When we're in a situation like this, a **copy constructor** can be used.
+
+- Used to create an object with the properties of another object
+
+```java
+// Constructor
+public Car(String make, double price, int year, String color) {
+  this.make = make;
+  this.price = price;
+  this.year = year;
+  this.color = color;
+}
+
+// Copy Constructor
+public Car(Car source) {
+  this.make = source.make;
+  this.price = source.price;
+  this.year = source.year;
+  this.color = source.color;
+}
+```
+
+- While creating the new object we should use the copy constructor instead so that both objects don't share the same reference
+
+```java
+Car nissan = new Car("Nissan", 10000, 2020, "Green"); // using Constructor
+Car nissan2 = new Car(nissan); // using Copy Constructor
+```
+
+- Now the variable `nissan2` will store a unique reference
+
+```java
+nissan2.setColor("Yellow");
+nissan.getColor(); // Green
+nissan2.getColor(); // Yellow
+
+nissan.setColor("Orange");
+nissan.getColor(); // Orange
+nissan2.getColor(); // Yellow
+```
+
+#### Mutable Objects
+
+- Objects which can be mutated using setters after they are created
+- Dealing with these objects, avoid setting them equal to one another
+
+#### When to use Copy Constructors?
+
+There are 2 good reasons for using a copy constructor instead of the constructor passing all parameters:
+
+1. When you have a complex object with many attributes it is much simpler to use the copy constructor instead of creating the same/similar object again and again with so many attributes and values.
+
+2. If you need to add a few new attributes to your objects along with older ones, you just change the copy constructor to take these new attribute into account along with older ones

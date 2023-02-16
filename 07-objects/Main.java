@@ -17,6 +17,8 @@ public class Main {
     Car nissan = new Car("Nissan", 10000, 2020, "Green");
     Car toyota = new Car("Toyota", 20000, 2021, "Red");
 
+    Car nissan2 = new Car(nissan);
+
     // When we make the class fields private, we can't access the variables directly
     // System.out.println(nissan.make); // Nissan
     // System.out.println(nissan.price); // 10000.0
