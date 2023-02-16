@@ -90,3 +90,55 @@ public Car(String make, double price, int year, String color) {
 ```
 
 When the constructor is done updating the field values using the values passed for the constructor parameters, our object is fully initialized (created) and the variable used stores the reference to this created object.
+
+## Getters
+
+- A public method used to get the value of some field of a class
+- It's return type is always the type of the field whose value it returns
+- The method name always starts with **get** followed by field name
+
+```java
+public String getMake() {
+  return make;
+}
+```
+
+#### Why Getters
+
+- If we don't make the class fields **private**, they can be accidentally updated later
+
+```java
+Car nissan = new Car("Nissan", 10000, 2020, "Green");
+
+// accidentally update
+nissan.make = "Toyota";
+```
+
+- It's considered a bad practice and hence we should always make the class fields **private** to that class only
+
+```java
+public class Car {
+  // private fields
+  private String make;
+  private double price;
+  private int year;
+
+  public Car(String make, double price, int year,) {
+    this.make = make;
+    this.price = price;
+    this.year = year;
+  }
+}
+```
+
+- This makes the fields private but it means we can't access them even while printing
+
+This is where **Getters** come in. They are methods which are used to get the value of certain fields
+
+```java
+public String getMake() {
+  return make; // We don't need `this` keyword since there is no conflicting variable of the same name unlike we had in the constructor function
+}
+```
+
+- Always use getters to access object fields

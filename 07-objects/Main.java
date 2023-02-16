@@ -17,14 +17,26 @@ public class Main {
     Car nissan = new Car("Nissan", 10000, 2020, "Green");
     Car toyota = new Car("Toyota", 20000, 2021, "Red");
 
-    System.out.println(nissan.make); // Nissan
-    System.out.println(nissan.price); // 10000.0
-    System.out.println(nissan.year); // 2020
-    System.out.println(nissan.color); // Green
+    // When we make the class fields private, we can't access the variables directly
+    // System.out.println(nissan.make); // Nissan
+    // System.out.println(nissan.price); // 10000.0
+    // System.out.println(nissan.year); // 2020
+    // System.out.println(nissan.color); // Green
 
-    System.out.println(toyota.make); // Toyota
-    System.out.println(toyota.price); // 20000.0
-    System.out.println(toyota.year); // 2021
-    System.out.println(toyota.color); // Red
+    // System.out.println(toyota.make); // Toyota
+    // System.out.println(toyota.price); // 20000.0
+    // System.out.println(toyota.year); // 2021
+    // System.out.println(toyota.color); // Red
+
+    // # GETTERS
+    System.out.println(nissan.getMake()); // Nissan
+    System.out.println(nissan.getPrice()); // 10000.0
+    System.out.println(nissan.getYear()); // 2020
+    System.out.println(nissan.getColor()); // Green
+
+    System.out.println(toyota.getMake()); // Toyota
+    System.out.println(toyota.getPrice()); // 20000.0
+    System.out.println(toyota.getYear()); // 2021
+    System.out.println(toyota.getColor()); // Red
   }
 }
