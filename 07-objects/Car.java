@@ -56,4 +56,9 @@ public class Car {
   public void setColor(String color) {
     this.color = color;
   }
+
+  // Methods
+  public void drive() {
+    System.out.println("\nDriving a " + this.color + " " + this.make + "...");
+  }
 }

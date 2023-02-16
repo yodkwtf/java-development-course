@@ -18,6 +18,7 @@ public class Main {
     Car toyota = new Car("Toyota", 20000, 2021, "Red");
 
     Car nissan2 = new Car(nissan);
+    nissan2.setColor("Yellow");
 
     // When we make the class fields private, we can't access the variables directly
     // System.out.println(nissan.make); // Nissan
@@ -47,5 +48,8 @@ public class Main {
 
     System.out.println("\n" + nissan.getMake()); // Nissan Altima
     System.out.println(nissan.getPrice()); // 11000.0
+
+    // # METHODS
+    nissan.drive(); // Driving a Green Nissan Altima...
   }
 }
