@@ -30,4 +30,22 @@ public class Car {
   public String getColor() {
     return color;
   }
+
+  // Setters
+  public void setMake(String make) {
+    this.make = make;
+    // We need `this` keyword since there is a conflicting variable of the same
+  }
+
+  public void setPrice(double price) {
+    this.price = price;
+  }
+
+  public void setYear(int year) {
+    this.year = year;
+  }
+
+  public void setColor(String color) {
+    this.color = color;
+  }
 }

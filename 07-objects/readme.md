@@ -103,7 +103,7 @@ public String getMake() {
 }
 ```
 
-#### Why Getters
+#### Why Getters?
 
 - If we don't make the class fields **private**, they can be accidentally updated later
 
@@ -133,12 +133,51 @@ public class Car {
 
 - This makes the fields private but it means we can't access them even while printing
 
-This is where **Getters** come in. They are methods which are used to get the value of certain fields
+This is where **Getters** come in. They are methods which are used to get the value of certain fields.
 
 ```java
 public String getMake() {
-  return make; // We don't need `this` keyword since there is no conflicting variable of the same name unlike we had in the constructor function
+  return make;
+  // We don't need `this` keyword since there is no conflicting variable of the same name unlike we had in the constructor function
 }
 ```
 
 - Always use getters to access object fields
+
+## Setters
+
+- Public methods used to update the private fields of a class
+- Takes a parameter whose type depends on the field it's going to update
+- Name always starts with **set** followed by the field name it updates
+
+```java
+public void setMake(String make) {
+  this.make = make;
+}
+```
+
+#### Why Setters?
+
+- Since fields are made private using the **private** keyword and hence they can not be directly updated using the objects
+
+The following code won't work since the fields are not visible to _toyota_ object -
+
+```java
+Car toyota = new Car("Toyota", 20000, 2021, "Red");
+
+toyota.make = "Toyota"; // won't work
+toyota.price = 20000; // won't work
+```
+
+That's where **Setters** come in. These methods are used to update the value of certain fields.
+
+```java
+public void setMake(String make) {
+  this.make = make;
+  // We need `this` keyword since there is a conflicting variable of the same
+}
+```
+
+Now even though we have private fields in our class, we have public Getters to get the field values and public setters to update the field values.
+
+> There's a nifty VSCode Extension called **Java Code Generators** that can generate getters and setters for any class with just one command.

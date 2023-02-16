@@ -38,5 +38,12 @@ public class Main {
     System.out.println(toyota.getPrice()); // 20000.0
     System.out.println(toyota.getYear()); // 2021
     System.out.println(toyota.getColor()); // Red
+
+    // # SETTERS
+    nissan.setMake("Nissan Altima");
+    nissan.setPrice(nissan.getPrice() + 1000);
+
+    System.out.println("\n" + nissan.getMake()); // Nissan Altima
+    System.out.println(nissan.getPrice()); // 11000.0
   }
 }
