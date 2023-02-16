@@ -14,8 +14,10 @@ public class Main {
     // toyota.color = "Red";
 
     // # CONSTRUCTOR WAY
-    Car nissan = new Car("Nissan", 10000, 2020, "Green");
-    Car toyota = new Car("Toyota", 20000, 2021, "Red");
+    String[] spareParts = new String[] { "Tires", "Keys" };
+
+    Car nissan = new Car("Nissan", 10000, 2020, "Green", spareParts);
+    Car toyota = new Car("Toyota", 20000, 2021, "Red", spareParts);
 
     Car nissan2 = new Car(nissan);
     nissan2.setColor("Yellow");
