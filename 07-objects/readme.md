@@ -373,3 +373,44 @@ public void setParts(String[] parts) {
 ```
 
 This will make the parts field store a unique reference of the passed array every time the setter function is used.
+
+## toString Method
+
+If we print an object directly, we get the class it's created from along with the reference.
+
+```java
+Car nissan = new Car("Nissan", 10000, 2020, "Green", spareParts);
+System.out.println(nissan); // Car@36baf30c
+```
+
+This happens because whenever we print the class, behind the scenes a `toString()` method is executed and it returns a string representation of the object.
+
+```java
+public String toString() {
+  return getClass().getName() + "@" + Integer.toHexString(hashCode());
+}
+```
+
+We can override this `toString()` method in our class to print a more meaningful result as per our needs.
+
+```java
+public String toString() {
+  return "Make: " + this.make + "\n"
+    + "Price: " + this.price + "\n"
+    + "Year: " + this.year + "\n"
+    + "Color: " + this.color + "\n"
+    + "Parts: " + Arrays.toString(this.parts) + "\n";
+}
+```
+
+Now when we try to print an object -
+
+```java
+Car nissan = new Car("Nissan", 10000, 2020, "Green", spareParts);
+System.out.println(nissan);
+// Make: Nissan Altima
+// Price: 11000.0
+// Year: 2020
+// Color: Green
+// Parts: [Tires, Keys]
+```

@@ -53,5 +53,8 @@ public class Main {
 
     // # METHODS
     nissan.drive(); // Driving a Green Nissan Altima...
+
+    System.out.println(nissan);
+    System.out.println(nissan2);
   }
 }

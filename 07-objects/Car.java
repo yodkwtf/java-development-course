@@ -74,4 +74,13 @@ public class Car {
   public void drive() {
     System.out.println("\nDriving a " + this.color + " " + this.make + "...");
   }
+
+  // override the toString method
+  public String toString() {
+    return "Make: " + this.make + "\n"
+        + "Price: " + this.price + "\n"
+        + "Year: " + this.year + "\n"
+        + "Color: " + this.color + "\n"
+        + "Parts: " + Arrays.toString(this.parts) + "\n";
+  }
 }
