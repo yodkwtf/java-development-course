@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Workbook1 {
+public class Workbook {
   public static void main(String[] args) {
     Person p = new Person();
 
