@@ -414,3 +414,101 @@ System.out.println(nissan);
 // Color: Green
 // Parts: [Tires, Keys]
 ```
+
+## Immutable Objects
+
+Data types in java can be categorized into 3 types -
+
+1. Primitive
+2. Immutable Objects
+3. Mutable Objects
+
+#### Primitive Data Types
+
+- Most basic data type in Java
+- Variables store a single value
+
+```java
+int apples = 6; // 4 bytes of memory
+long population = 6000000000000L; // 8 bytes of memory
+double price = 5.99; // 8 bytes of memory
+char = 'A'; // 2 bytes of memory
+boolean bool = true; // 1 bit of memory
+```
+
+#### Immutable Objects
+
+- For every primitive data type, there is an immutable object type
+- We can create new objects of any primitive type using that type's class
+- Variables used will only store reference to that object
+- Works in the following way -
+
+```java
+Integer apples = new Integer(5);
+```
+
+- Above method is now depreciated so we can do it directly
+
+```java
+Integer apples = 5; // 16 bytes
+Long population = 6000000000000L; // 24 bytes
+Double price = 5.99; // 24 bytes of memory
+Char = 'A'; // 16 bytes
+Boolean bool = true; // 16 bytes
+```
+
+#### Immutable Objects vs Primitive
+
+1. Immutable objects take more memory than primitive types
+
+   - Include object metadata along with the field value itself
+
+2. Immutable objects can be null, primitive can't be null
+
+   - `null` is a reference that points to nothing when there is no object
+
+   ```java
+   Integer apples = null;
+   apples = 5;
+   ```
+
+   - Primitive types don't play with reference so they can't ever hold `null` since they won't ever eventually point to any object
+
+3. Immutable objects can call methods, primitive objects can not
+
+Hence, only use immutable objects if you have to otherwise always prefer primitive.
+
+#### Immutable Objects vs Mutable Objects
+
+1. Immutable Objects are **safer** since they cannot be modified after creation
+
+   - State of an immutable object can't be changed
+   - References can be shared safely across your application
+
+   - You cannot update an immutable object. You can only set the variable equal to a brand new immutable object.
+   - Once an immutable object is updated, a brand new reference is created
+
+   ```java
+   Integer apples = 5; // apples = Integer@10
+   Integer apples2 = apples; // apples2 = Integer@10
+   apples2 = 10; // apples2 = Integer@18
+   ```
+
+2. Mutable Objects are **less safe** since they can be modified
+   - Avoid setting 2 variables equal to one another
+   - Sharing references can lead to unintended side effects
+   ```java
+   City city = new City("Paris"); // city = Object@10
+   City city2 = city; // city2 = Integer@10
+   city2.setName("Shimla") = 10; // city2 = Integer@10, city = Integer@10
+   // `City` also becomes Shimla
+   ```
+
+#### String is an Immutable Object
+
+```java
+String text = "hi";
+String text2 = new String("Hello");
+```
+
+Here we are basically setting our variable equal to a new object of the String class.
