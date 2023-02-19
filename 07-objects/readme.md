@@ -29,7 +29,7 @@ public class Car {
 }
 ```
 
-#### Creating Objects from Class
+### Creating Objects from Class
 
 Now from the **Car class** we can create many **Car objects**
 
@@ -248,131 +248,13 @@ nissan2.getColor(); // Yellow
 - Objects which can be mutated using setters after they are created
 - Dealing with these objects, avoid setting them equal to one another
 
-#### When to use Copy Constructors?
+### When to use Copy Constructors?
 
 There are 2 good reasons for using a copy constructor instead of the constructor passing all parameters:
 
 1. When you have a complex object with many attributes it is much simpler to use the copy constructor instead of creating the same/similar object again and again with so many attributes and values.
 
 2. If you need to add a few new attributes to your objects along with older ones, you just change the copy constructor to take these new attribute into account along with older ones
-
-## Arrays are Mutable Objects
-
-Arrays are mutable objects that means they can be updated even after they are created. Therefore, it's very important to use them carefully. For example,
-
-```java
-private String make;
-private double price;
-private String[] parts;
-
-// Constructor
-public Car(String make, double price, String[] parts) {
-  this.make = make;
-  this.price = price;
-  this.parts = parts;
-}
-```
-
-This would be considered a bad practice since we are making one array variable equal to the other
-
-```java
-this.parts = parts; // we are just storing the reference of the `parts` array to `this.parts`
-```
-
-In this case, if we update any one of the 2 values later, both of them would be updated since they both point to the same reference in memory.
-
-Let's say the parts array that was passed to the constructor was initially -
-
-```java
-String[] spareParts = new String[] {"Tires", "Keys"};
-```
-
-and then we changed an element -
-
-```java
-spareParts[0] = "Filter";
-```
-
-Since, spareParts, **parts** and **this.parts** all store the reference to the same array, all of them would be updated which isn't ideal at all.
-
-#### Fixing the Constructor
-
-It can be fixed by using a copy of the passed array as it creates a new reference (object) in the memory
-
-```java
-this.parts = Arrays.copyOf(parts, parts.length); // copy full length of the array
-```
-
-Now even if we mutate the array passed to the constructor (spareParts), the car objects won't be mutated since they all store a unique reference for the parts field
-
-#### Fixing the Copy Constructor
-
-If we don't fix the copy constructor, any object created with it will share the reference (for the _parts_ field) of the object that is passed as the **source**.
-
-Then if we update the source object's or the newly created object's _parts_ field, both of them would be updated since they both point to the same object in memory.
-
-```java
-public Car(Car source) {
-  this.make = source.make;
-  this.price = source.price;
-  this.year = source.year;
-  this.color = source.color;
-  this.parts = Arrays.copyOf(source.parts, source.parts.length); // FIX: copyOf creates a new reference in memory
-}
-```
-
-#### Fixing the Getter
-
-If we return the **parts** array directly from the getter than whatever variable is used will store the reference of it and hence will be able to mutate the **parts** array directly.
-
-For example, if the getter is -
-
-```java
-public String[] getParts() {
-  return this.parts;
-}
-```
-
-And it is used as -
-
-```java
-String[] carParts = nissan.getParts();
-carParts[0] = "Filters"; // will mutate `carParts` as well as `nissan.parts`
-```
-
-Here, **carParts** and **Nissan.parts** point to the same reference. Hence, mutating one would mutate both of them which is BAD PRACTICE.
-
-This **can be fixed by returning a copy of the array from the getter** function so that a new reference would be returned.
-
-```java
-public String[] getParts() {
-  return Arrays.copyOf(this.parts, this.parts.length);
-}
-```
-
-Now whatever variable is used to store the return value of getter function, it will hold a new reference of the array.
-
-#### Fixing the Setter
-
-For the setters, the situation is the same as we had for the constructor. We can't directly set constructor's **parts** array equal to the one that's passed, otherwise if the passed array is later changed, it will also mutate all the instances of the constructor since the passed array and the instances will both be sharing the reference to the same array in memory.
-
-Bug -
-
-```java
-public void setParts(String[] parts) {
-  this.parts = parts;
-}
-```
-
-Fix -
-
-```java
-public void setParts(String[] parts) {
-  this.parts = Arrays.copyOf(parts, parts.length);
-}
-```
-
-This will make the parts field store a unique reference of the passed array every time the setter function is used.
 
 ## toString Method
 
@@ -414,6 +296,124 @@ System.out.println(nissan);
 // Color: Green
 // Parts: [Tires, Keys]
 ```
+
+## Arrays are Mutable Objects
+
+Arrays are mutable objects that means they can be updated even after they are created. Therefore, it's very important to use them carefully. For example,
+
+```java
+private String make;
+private double price;
+private String[] parts;
+
+// Constructor
+public Car(String make, double price, String[] parts) {
+  this.make = make;
+  this.price = price;
+  this.parts = parts;
+}
+```
+
+This would be considered a bad practice since we are making one array variable equal to the other
+
+```java
+this.parts = parts; // we are just storing the reference of the `parts` array to `this.parts`
+```
+
+In this case, if we update any one of the 2 values later, both of them would be updated since they both point to the same reference in memory.
+
+Let's say the parts array that was passed to the constructor was initially -
+
+```java
+String[] spareParts = new String[] {"Tires", "Keys"};
+```
+
+and then we changed an element -
+
+```java
+spareParts[0] = "Filter";
+```
+
+Since, spareParts, **parts** and **this.parts** all store the reference to the same array, all of them would be updated which isn't ideal at all.
+
+### Fixing the Constructor
+
+It can be fixed by using a copy of the passed array as it creates a new reference (object) in the memory
+
+```java
+this.parts = Arrays.copyOf(parts, parts.length); // copy full length of the array
+```
+
+Now even if we mutate the array passed to the constructor (spareParts), the car objects won't be mutated since they all store a unique reference for the parts field
+
+### Fixing the Copy Constructor
+
+If we don't fix the copy constructor, any object created with it will share the reference (for the _parts_ field) of the object that is passed as the **source**.
+
+Then if we update the source object's or the newly created object's _parts_ field, both of them would be updated since they both point to the same object in memory.
+
+```java
+public Car(Car source) {
+  this.make = source.make;
+  this.price = source.price;
+  this.year = source.year;
+  this.color = source.color;
+  this.parts = Arrays.copyOf(source.parts, source.parts.length); // FIX: copyOf creates a new reference in memory
+}
+```
+
+### Fixing the Getter
+
+If we return the **parts** array directly from the getter than whatever variable is used will store the reference of it and hence will be able to mutate the **parts** array directly.
+
+For example, if the getter is -
+
+```java
+public String[] getParts() {
+  return this.parts;
+}
+```
+
+And it is used as -
+
+```java
+String[] carParts = nissan.getParts();
+carParts[0] = "Filters"; // will mutate `carParts` as well as `nissan.parts`
+```
+
+Here, **carParts** and **Nissan.parts** point to the same reference. Hence, mutating one would mutate both of them which is BAD PRACTICE.
+
+This **can be fixed by returning a copy of the array from the getter** function so that a new reference would be returned.
+
+```java
+public String[] getParts() {
+  return Arrays.copyOf(this.parts, this.parts.length);
+}
+```
+
+Now whatever variable is used to store the return value of getter function, it will hold a new reference of the array.
+
+### Fixing the Setter
+
+For the setters, the situation is the same as we had for the constructor. We can't directly set constructor's **parts** array equal to the one that's passed, otherwise if the passed array is later changed, it will also mutate all the instances of the constructor since the passed array and the instances will both be sharing the reference to the same array in memory.
+
+Bug -
+
+```java
+public void setParts(String[] parts) {
+  this.parts = parts;
+}
+```
+
+Fix -
+
+```java
+public void setParts(String[] parts) {
+  this.parts = Arrays.copyOf(parts, parts.length);
+}
+```
+
+This will make the parts field store a unique reference of the passed array every time the setter function is used.
 
 ## Immutable Objects
 
@@ -457,7 +457,7 @@ Char = 'A'; // 16 bytes
 Boolean bool = true; // 16 bytes
 ```
 
-#### Immutable Objects vs Primitive
+### Immutable Objects vs Primitive
 
 1. Immutable objects take more memory than primitive types
 
@@ -478,7 +478,7 @@ Boolean bool = true; // 16 bytes
 
 Hence, only use immutable objects if you have to otherwise always prefer primitive.
 
-#### Immutable Objects vs Mutable Objects
+### Immutable Objects vs Mutable Objects
 
 1. Immutable Objects are **safer** since they cannot be modified after creation
 
