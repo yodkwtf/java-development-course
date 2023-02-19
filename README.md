@@ -1,8 +1,8 @@
 ## Java Fundamentals Course
 
-A collection of Java notes, exercises, small projects, and rest from the Java course I took on Udemy. The course is called [The Complete Java Development Bootcamp](https://www.udemy.com/course/the-complete-java-development-bootcamp/) and it's created by Rayan Slim, Jad Slim, and Jose Portilla.
+A collection of Java notes, exercises, small projects, and the rest from the Java course I took on Udemy. The course is called [The Complete Java Development Bootcamp](https://www.udemy.com/course/the-complete-java-development-bootcamp/) and it's created by Rayan Slim, Jad Slim, and Jose Portilla.
 
-For more info about a specific topic, navigate to that topic's directory and check out the readme file for the notes.
+For more info about a specific chapter, navigate to that chapter's directory and check out the readme file for the documentation.
 
 #### Chapters
 
