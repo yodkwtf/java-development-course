@@ -74,7 +74,7 @@ cities.set(3, "Jaipur");
 cities.size();
 ```
 
-### ArrayList
+## ArrayList
 
 - Every time we add an element to an ArrayList Java checks whether list **size** is equal to the **capacity**
 - Initially both of them are 0, so when we add an element Java sets the underlying field equal to a new array that has the capacity to store 10 elements
