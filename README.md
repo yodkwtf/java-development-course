@@ -6,14 +6,14 @@ For more info about a specific chapter, navigate to that chapter's directory and
 
 #### Chapters
 
-1. [Java Fundamentals](/01-java-fundamentals#readme.md)
-2. [Variables](/02-variables#readme.md)
-3. [Booleans and Conditionals](/03-booleans-and-conditionals#readme.md)
-4. [Functions](/04-functions#readme.md)
-5. [Loops](/05-loops#readme.md)
-6. [Arrays](/06-arrays#readme.md)
-7. [Objects](/07-objects#readme.md)
-8. [List Collections](/08-list-collections#readme.md)
+1. [Java Fundamentals](/01-java-fundamentals)
+2. [Variables](/02-variables)
+3. [Booleans and Conditionals](/03-booleans-and-conditionals)
+4. [Functions](/04-functions)
+5. [Loops](/05-loops)
+6. [Arrays](/06-arrays)
+7. [Objects](/07-objects)
+8. [List Collections](/08-list-collections)
 
 #### Extra Content
 
