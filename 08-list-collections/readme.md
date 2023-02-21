@@ -82,3 +82,40 @@ cities.size();
 - When list **size** is finally equal to **capacity** and we add another element, the array list is smart enough to dynamically resize by setting its field equal to a new array of a larger capacity
 
 Thus, when we are using ArrayLists, we can add as many elements as we want since it's smart enough to resize.
+
+```java
+main() {
+  List<String> cities = new ArrayList<>();
+}
+```
+
+## LinkedList
+
+- Just like ArrayList, they don't have a fixed size
+- Stores data very differently than ArrayList
+
+```java
+import java.util.LinkedList;
+import java.util.List;
+
+main() {
+  List<String> cities = new LinkedList<>();
+}
+```
+
+- Adding an element to a LinkedList creates a new node that stores the element
+- When first node is created, it contains a reference that uniquely identifies it
+- When we add more elements to the list, more new nodes are created which not only store the added element but also store the reference to their previous node
+- In turn, the previous node stores a reference to the new node
+
+The more elements we add the more new nodes are created such that each nodes store the added element and the reference to their previous and next node.
+
+#### Why retrieving elements from a LinkedList is slow?
+
+Retrieving data from a LinkedList is very slow compared to ArrayLists
+
+- ArrayLists are backed by normal arrays so if we want to access something, it can be grabbed via that index
+- LinkedLists don't have any index, they only have a chain of nodes
+- So if we want to access any element, the list needs to traverse from the first or the last node (based on which is closer) all the way to the required node one by one.
+
+Hence, it is comparatively slow.
