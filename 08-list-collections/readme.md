@@ -119,3 +119,46 @@ Retrieving data from a LinkedList is very slow compared to ArrayLists
 - So if we want to access any element, the list needs to traverse from the first or the last node (based on which is closer) all the way to the required node one by one.
 
 Hence, it is comparatively slow.
+
+## ArrayList vs LinkedList
+
+- ArrayList is backed by a regular array that increases its capacity based on array size
+- LinkedList comprises of node where each node is linked to the prev and the next node
+
+#### Which one is more efficient?
+
+- **ArrayList**: retrieving elements
+- **No Difference**: Performing operations from either end of the list
+- **LinkedList**: add/removing elements from the middle
+
+While inserting an element in the middle, the ArrayList has to create a new array and copy over the elements of the prev array while inserting the new element inside. It can't just insert a new element in the middle.
+
+The same thing happens while removing an element from the middle.
+
+##### Here's a small example of different operations and their recorded time -
+
+```sh
+# FETCHING DATA
+LinkedList: 43ms
+ArrayList: 0ms
+
+# FIRST / LAST INDEX
+LinkedList: 0ms
+ArrayList: 0ms
+
+# INSERTION FROM MIDDLE
+LinkedList: 0ms
+ArrayList: 12ms
+
+# INSERTION
+LinkedList: 0ms
+ArrayList: 0ms
+
+# REMOVAL
+LinkedList: 0ms
+ArrayList: 14ms
+
+# UPDATES
+LinkedList: 56ms
+ArrayList: 0ms
+```
