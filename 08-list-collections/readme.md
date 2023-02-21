@@ -162,3 +162,110 @@ ArrayList: 14ms
 LinkedList: 56ms
 ArrayList: 0ms
 ```
+
+## Default equals()
+
+- Only checks for references of objects and whether they are equal or not
+- Uses `==` operator to compare references
+
+```java
+City paris = new City("Paris", 2161000);
+City copy = paris;
+City differentCopy = new City(paris);
+
+System.out.println(paris.equals(copy)); // `true` since both share references
+System.out.println(paris.equals(differentCopy)); // `false` since copy constructor is used hence a new copy and reference of the `paris` object is created
+```
+
+- So even if all the values are equal, it'll return `false` if the references are different
+
+#### The issue with ArrayList
+
+- Every time we add an object to the list, a new reference is created
+
+```java
+ArrayList<City> cities = new ArrayList<>();
+cities.add(new City("Paris", 2161000)); // new reference
+cities.add(new City("Florence", 382258));
+cities.add(new City("Venice", 261905));
+```
+
+- Let's say we check if a certain object is present is in the list or not
+
+```java
+ City paris = new City("Paris", 2161000); // new reference
+ System.out.println(cities.contains(paris)); // false
+```
+
+Now even though the list has an object with the same fields we asked, it still returns false since the references of both the objects are different. This happens because behind the scenes the `contains()` method loops over the list to check uses **default equals** which only checks for references.
+
+Hence, this isn't ideal since our list does contain the asked object.
+
+## Overriding equals()
+
+- Default equals method can be overridden in it's class
+
+```java
+@Override
+public boolean equals(Object o) {
+  if (o == this)
+      return true;
+  if (!(o instanceof City)) {
+      return false;
+  }
+  City city = (City) o;
+  return Objects.equals(name, city.name) && population == city.population;
+}
+
+// > Equality Contract: When you override equals, you must override hashcode.
+@Override
+public int hashCode() {
+  return Objects.hash(name, population);
+}
+```
+
+- DON"T change signature (parameter name) of the equals method otherwise Java won't recognize you're overriding it
+
+- In the parameters, `Object` is the first argument that can be an object of any type (including Lists) and `o` is the second argument which is being compared with the first one
+
+#### Working
+
+- First we check if the references of the objects are same
+
+```java
+if (o == this)
+  return true;
+```
+
+- Now, if the references of the object are not equal, we check if the second object is not an instance of the same class
+
+```java
+if (!(o instanceof City)) {
+  return false;
+}
+```
+
+- If it is instance of the same class, then we typecast it first and then compare all the field values of both objects
+
+```java
+City city = (City) o;
+return Objects.equals(name, city.name) && population == city.population;
+```
+
+##### So now if we test the following code -
+
+```java
+ArrayList<City> cities = new ArrayList<>();
+cities.add(new City("Paris", 2161000)); // new reference
+cities.add(new City("Florence", 382258));
+cities.add(new City("Venice", 261905));
+
+City paris = new City("Paris", 2161000); // new reference
+System.out.println(cities.contains(paris));
+```
+
+- `contains()` method will call overridden `equals` method
+- First condition will be false since references aren't equal
+- Second condition will also pass since `paris` object is an instance of `City` class
+- Then we compare the field values `paris` object with the city object at each iteration and return true when all the field values match
+- So we finally check if an Object (List in our case) contains another object even if the references are unique
