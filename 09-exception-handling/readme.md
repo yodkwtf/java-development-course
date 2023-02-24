@@ -115,3 +115,69 @@ System.out.println("Please enter a random integer");
 scanner.nextInt(); // mismatch when user enters a wrong type like string
 scanner.close();
 ```
+
+## Argument Validation
+
+- Ensures that methods only receive correct arguments
+
+#### Quality Control POV
+
+- Throws `IllegalArgumentException` if a method receives wrong arguments
+
+```java
+public void setAge(int age) {
+  if(age < 0) {
+    throw new IllegalArgumentException("Age cannot be negative");
+  }
+  this.age = age;
+}
+
+public void setUsername(String username) {
+  if(username == null || username.isBlank()) {
+    throw new IllegalArgumentException("Invalid username");
+  }
+  this.age = age;
+}
+```
+
+- Ensure our method only runs if we pass the right arguments, otherwise we crash the program
+
+#### Handling User Input POV
+
+- prevent exceptions from being thrown
+
+The following code will throw an error since the `username` is initially null
+
+```java
+user.setUsername(user.getUsername());
+```
+
+A correct way could be the following but it'll still crash if user enters a blank value
+
+```java
+user.setUsername(scanner.nextLine());
+```
+
+Hence, the correct way would be -
+
+```java
+String username = scanner.nextLine();
+
+if (username.isBlank()) {
+  System.out.println("Sorry, that is an invalid username");
+} else {
+  user.setUsername(username);
+}
+```
+
+Similarly, we can validate for **age**
+
+```java
+String age = scanner.nextInt();
+
+if (age < 0) {
+  System.out.println("Sorry, that is an invalid age");
+} else {
+  user.setUsername(age);
+}
+```
