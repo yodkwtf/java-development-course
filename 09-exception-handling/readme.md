@@ -122,7 +122,7 @@ scanner.close();
 
 #### Quality Control POV
 
-- Throws `IllegalArgumentException` if a method receives wrong arguments
+- Throw `IllegalArgumentException` if a method receives wrong arguments
 
 ```java
 public void setAge(int age) {
@@ -140,11 +140,11 @@ public void setUsername(String username) {
 }
 ```
 
-- Ensure our method only runs if we pass the right arguments, otherwise we crash the program
+- Ensure our methods only run if we pass the right arguments, otherwise we crash the program
 
 #### Handling User Input POV
 
-- prevent exceptions from being thrown
+- Write code that prevents exceptions from being thrown
 
 The following code will throw an error since the `username` is initially null
 
@@ -158,7 +158,7 @@ A correct way could be the following but it'll still crash if user enters a blan
 user.setUsername(scanner.nextLine());
 ```
 
-Hence, the correct way would be -
+Hence, the best way to predict and handle exceptions would be -
 
 ```java
 String username = scanner.nextLine();
@@ -170,7 +170,7 @@ if (username.isBlank()) {
 }
 ```
 
-Similarly, we can validate for **age**
+Similarly, we can validate for **age** too -
 
 ```java
 String age = scanner.nextInt();
