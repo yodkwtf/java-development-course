@@ -15,17 +15,22 @@
 #### Creating Maps
 
 ```java
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
+import java.util.TreeMap;
 
 public class HashMapInventory {
   public static void main(String[] args) {
+    // HashMap
     Map<String, Double> inventory = new HashMap<>();
+
+    // TreeMap
+    Map<Integer, Integer> tree = new TreeMap<>();
   }
 }
 ```
 
-#### Setting Data
+#### Adding Entries
 
 Map collections have a method called `put()` which accepts key value pairs
 
@@ -33,7 +38,7 @@ Map collections have a method called `put()` which accepts key value pairs
 map.put("Bananas", 3.99);
 ```
 
-#### Getting Data
+#### Getting Entries
 
 Map collections have a method called `get()` which accepts key and returns it's mapped value
 
@@ -41,7 +46,7 @@ Map collections have a method called `get()` which accepts key and returns it's 
 map.get("Bananas"); // 3.99
 ```
 
-#### Checking Data
+#### Checking Entries
 
 Maps have a `containsKey()` method which checks whether a key exists in collection or not by returning a boolean value
 
@@ -51,7 +56,9 @@ boolean result = inventory.containsKey("Apples");
 
 ## HashMap
 
-Let's store price of different items in a Hashmap where each item will be of string type and it's price will be of double type -
+Stores unordered collection of entries
+
+###### Let's store price of different items in a Hashmap where each item will be of string type and it's price will be of double type -
 
 ```java
 // Create a HashMap
@@ -117,3 +124,61 @@ inventory.get("Papaya"); // 5.99
 5. Once we find a key, we get it's corresponding value
 
 When there are no collisions, **lookup operations** on HashMaps are very fast.
+
+## TreeMap
+
+Stores ordered collection of entries
+
+###### Let's create a multiplication table using TreeMap for `5` where key is the multiplier (integer) and value is the multiple (integer) -
+
+```java
+// Create a TreeMap
+Map<Integer, Integer> tree = new TreeMap<>();
+```
+
+#### Adding Entries
+
+```java
+int n = 5;
+
+tree.put(1, n * 1); // 1: 5
+tree.put(2, n * 2); // 2: 10
+tree.put(3, n * 3); // 3: 15
+tree.put(4, n * 4); // 4: 20
+tree.put(5, n * 5); // 5: 25
+tree.put(6, n * 6); // 5: 30
+tree.put(7, n * 7); // 5: 35
+```
+
+- When we add entries to a TreeMap, it stores them in a tree like data structure
+- It uses _the red black tree algorithm_ to continuously sort entries as they are being added
+- It basically stores the entries in ascending order of the keys
+- As a result, every node in the left sub-tree is going to be smaller than it's root sub-node and every node in the right sub-tree is going to be higher than the root sub-node
+
+```sh
+/**
+ *         20
+ *       /   \
+ *     10     30
+ *   /   \    / \
+ *  5    15  25  35
+ */
+```
+
+If we go from left to right, we see tree maps are sorted in ascending order.
+
+#### Accessing Entries
+
+```java
+System.out.println(tree.get(4)); // 20
+System.out.println(tree.get(7)); // 35
+```
+
+- Whenever we get a key we go to the main root node and check whether given key is lower or higher
+- If it's lower, we go to the left child nodes else if it's higher we go right
+- We keep repeating the step until we find the key we're looking for
+- The deeper our node is, the more steps and time it will take to retrieve it
+
+Hence, we see that **TreeMaps** sort entries in ascending key order and the time taken to retrieve data depends on the tree depth.
+
+> Use **HashMap** if order doesn't matter and **TreeMap** if entries need to be sorted
