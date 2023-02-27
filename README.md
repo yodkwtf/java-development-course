@@ -15,6 +15,7 @@ For more info about a specific chapter, navigate to that chapter's directory and
 7. [Objects](/07-objects)
 8. [List Collections](/08-list-collections)
 9. [Exception Handling](/09-exception-handling/)
+10. [Map Collections](/10-map-collections/)
 
 #### Extra Content
 
