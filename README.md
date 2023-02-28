@@ -21,6 +21,8 @@ For more info about a specific chapter, navigate to that chapter's directory and
 
 - [Immutable Objects](/07-objects/readme.md/#immutable-objects)
 - [Package and Import](/miscellaneous/package-and-import/readme.md)
+- [Static and Final Keywords](/miscellaneous/static-and-final/readme.md)
+- [Enums](/miscellaneous/enums/readme.md)
 
 #### Mini Projects
 
