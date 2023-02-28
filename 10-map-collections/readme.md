@@ -182,3 +182,118 @@ System.out.println(tree.get(7)); // 35
 Hence, we see that **TreeMaps** sort entries in ascending key order and the time taken to retrieve data depends on the tree depth.
 
 > Use **HashMap** if order doesn't matter and **TreeMap** if entries need to be sorted
+> 0
+
+## HashMap Equality
+
+HashMaps by default rely on default equals and hashcode methods which can be problematic in some case as they use references for operations. Hence, we need to update these default methods.
+
+#### `hashcode()` method
+
+- By default returns a hashcode value based on the reference
+
+```java
+Contact contact = new Contact("Alice", 30);
+Contact contactCopy = contact;
+Contact contactCopy2 = new Contact(contact);
+
+contact.hashCode(); // 918221580
+contactCopy.hashCode(); // 918221580
+contactCopy2.hashCode(); // 456466518
+```
+
+- For the first 2 case, both hash codes are same since both the objects point to the same reference in memory
+
+#### Default `equals()` method
+
+- By default the `equals` method compares references
+
+```java
+Contact contact = new Contact("Alice", 30);
+Contact contactCopy = contact;
+Contact contactCopy2 = new Contact(contact);
+
+contact.equals(contactCopy) // true
+contact.equals(contactCopy2) // false
+```
+
+- Method returns **true** for the first one and **false** for the second since it compares references of both objects
+
+#### Problem with this approach
+
+###### Let's say we create a HashMap and insert a bunch of objects in it
+
+```java
+Map<Contact, String> peopleMap = new HashMap<>();
+
+peopleMap.put(new Contact("Alice", 30), "1806 Farm Meadow Drive");
+peopleMap.put(new Contact("Bob", 35), "4046 Weekley Street");
+peopleMap.put(new Contact("Charles", 36), "1110 Cerullo Road");
+```
+
+###### Now let's say we want to retrieve an object from the map
+
+```java
+peopleMap.get(new Contact("Alice", 30)) // returns `null`
+```
+
+The above line returns `null` since whenever we create a new object of the `Contact` class, a new reference is created, so when we try to retrieve it with the new reference it doesn't match with the one store in the Map.
+
+#### Fix for the above issue
+
+This above issue is not at all ideal. Hence, we need to override the default `equals` and `hashcode` methods.
+
+```java
+ @Override
+public boolean equals(Object o) {
+  if (o == this)
+    return true;
+  if (!(o instanceof Contact)) {
+    return false;
+  }
+  Contact contact = (Contact) o;
+  return Objects.equals(name, contact.name) && age == contact.age;
+}
+
+@Override
+public int hashCode() {
+  return Objects.hash(name, age);
+}
+```
+
+###### Comparing two objects by references now
+
+```java
+Contact contact = new Contact("Alice", 30);  // Reference -> R1
+Contact contactCopy = contact;               // Reference -> R1
+Contact contactCopy2 = new Contact(contact); // Reference -> R2
+
+// HashCode()
+contact.hashCode();       // 918221580
+contactCopy.hashCode();   // 918221580
+contactCopy2.hashCode();  // 918221580
+
+// Equals
+contact.equals(contactCopy) // true
+contact.equals(contactCopy) // true
+```
+
+This happens since the overridden methods now don't compare based on the references, instead they compare the objects based on their field types.
+
+###### Trying with HashMap
+
+```java
+Map<Contact, String> peopleMap = new HashMap<>();
+
+peopleMap.put(new Contact("Alice", 30), "1806 Farm Meadow Drive");
+peopleMap.put(new Contact("Bob", 35), "4046 Weekley Street");
+peopleMap.put(new Contact("Charles", 36), "1110 Cerullo Road");
+```
+
+###### Now let's say we want to retrieve an object from the map
+
+```java
+peopleMap.get(new Contact("Alice", 30)) // returns `1806 Farm Meadow Drive`
+```
+
+The above line returns the expected value since even though a new reference is created, we have overridden the behind the scene's hash method to check for the values based on fields entered.
