@@ -23,6 +23,7 @@ For more info about a specific chapter, navigate to that chapter's directory and
 - [Package and Import](/miscellaneous/package-and-import/readme.md)
 - [Static and Final Keywords](/miscellaneous/static-and-final/readme.md)
 - [Enums](/miscellaneous/enums/readme.md)
+- [Big Decimals](/miscellaneous/big-decimals/readme.md)
 
 #### Mini Projects
 
