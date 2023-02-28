@@ -122,3 +122,74 @@ Employee lisa = new Employee("Lisa", 20);
 System.out.println("Retirement Age: " + Employee.MAX_AGE);
 System.out.println("Minimum Working Age: " + Employee.MIN_AGE);
 ```
+
+## Static Imports
+
+- We can import static fields from any classes
+- Use normal `import` syntax
+- Use `static` keyword to specify a static field is being imported
+
+For example, let's say we are using `Math.PI` at several places which is a **static** field of the `Math` class
+
+###### Problem
+
+```java
+public double getCircumference() {
+  return 2 * Math.PI * radius;
+}
+
+public double getArea() {
+  return Math.PI * radius * radius;
+}
+```
+
+Instead of writing the class name again and again, we can directly import it and get direct access to it
+
+###### Solution
+
+```java
+import static java.lang.Math.PI; // specify we're importing a static method
+
+public double getCircumference() {
+  return 2 * PI * radius;
+}
+
+public double getArea() {
+  return PI * radius * radius;
+}
+```
+
+Now, let's say we have to use several **static** methods of the `Math` class, in that case it can become a bit tedious to import them all one by one.
+
+So we can import all the static methods from a class at once -
+
+###### Import all static methods from `Math` class
+
+```java
+import static java.lang.Math.*;
+
+// PI
+public double getCircumference() {
+  return 2 * PI * radius;
+}
+
+// max
+public double getLargerRadius(double otherRadius) {
+  return max(radius, otherRadius);
+}
+
+// min
+public double getSmallerRadius(double otherRadius) {
+  return min(radius, otherRadius);
+}
+
+// pow
+public double getRadiusSquared() {
+  return pow(radius, 2);
+}
+
+// sqrt
+public double getRadiusSquareRoot() {
+  return sqrt(radius);
+}
+```
