@@ -151,3 +151,97 @@ public static void productStore(Product product) {
 ```
 
 Instead of using the child class specific getters, we can use the parent class getters which are inherited by all child classes.
+
+## `super` keyword
+
+- Calls the parent constructor to update the inherited fields
+- Used to send constructor parameters from child class to the parent class
+
+Here, the parent class expects 3 arguments for the fields that will be inherited by it's child classes
+
+###### Product.java
+
+```java
+private double price;
+private String color;
+private String brand;
+
+// # Constructor
+public Product(double price, String color, String brand) {
+  this.price = price;
+  this.color = color;
+  this.brand = brand;
+}
+```
+
+But both the child classes need to have all arguments including the child specific fields and the parent class fields
+
+###### Shirt.java
+
+```java
+private Size size;
+
+public enum Size {
+  SMALL, MEDIUM, LARGE
+}
+
+// Constructor
+public Shirt(double price, String color, String brand, Size size) {
+  this.size = size;
+}
+```
+
+###### Pants.java
+
+```java
+private int waist;
+private int length;
+
+// Constructor
+public Pants(double price, String color, String brand, int waist, int length) {
+  this.waist = waist;
+  this.length = length;
+}
+```
+
+Now when we get all these arguments while creating an object from the class, we need to somehow pass the parent fields to the parent class since the child class only use the child class specific arguments. This is where `super` keyword is used.
+
+```java
+super(price, color, brand);
+```
+
+We pass all the required arguments while creating the objects
+
+###### Main.java
+
+```java
+Shirt shirt = new Shirt(100.0, "Black", "Adidas", Size.SMALL);
+Pants pants = new Pants(120.0, "Navy Blue", "Nike", 32, 56);
+```
+
+The child class gets the arguments and passes it to the parent class
+
+###### Shirt.java
+
+```java
+public Shirt(double price, String color, String brand, Size size) {
+  super(price, color, brand);
+  this.size = size;
+}
+```
+
+###### Pants.java
+
+```java
+public Pants(double price, String color, String brand, int waist, int length) {
+  super(price, color, brand);
+  this.waist = waist;
+  this.length = length;
+}
+```
+
+Now the 3 arguments are passed to the `super` constructor which means the constructor of the current class's parent class which is `Product` class in our case.
+
+These 3 fields are updated when the parent constructor is called and the rest of the child specific fields are updated by the respective child class constructors.
+
+> Parent class is also called `super` class

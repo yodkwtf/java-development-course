@@ -5,6 +5,14 @@ public class Pants extends Product {
     private int waist;
     private int length;
 
+    // Constructor
+    public Pants(double price, String color, String brand, int waist, int length) {
+        super(price, color, brand);
+        this.waist = waist;
+        this.length = length;
+    }
+
+    // Getters and Setters
     public int getWaist() {
         return this.waist;
     }

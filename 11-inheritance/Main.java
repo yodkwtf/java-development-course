@@ -6,25 +6,12 @@ import product.Shirt.Size;
 public class Main {
     public static void main(String[] args) {
         // # SHIRT
-        Shirt shirt = new Shirt();
-        // methods inherited from Shirt (child) class
-        shirt.setSize(Size.SMALL);
-        // methods inherited from Product (parent) class
-        shirt.setColor("Black");
-        shirt.setBrand("Adidas");
-        shirt.setPrice(100.0);
+        Shirt shirt = new Shirt(100.0, "Black", "Adidas", Size.SMALL);
         shirt.fold();
         productStore(shirt);
 
         // # PANTS
-        Pants pants = new Pants();
-        // methods inherited from Pants (child) class
-        pants.setWaist(32);
-        pants.setLength(32);
-        // methods inherited from Product (parent) class
-        pants.setColor("Navy Blue");
-        pants.setBrand("Nike");
-        pants.setPrice(120.0);
+        Pants pants = new Pants(120.0, "Navy Blue", "Nike", 32, 56);
         pants.fold();
         productStore(pants);
     }
