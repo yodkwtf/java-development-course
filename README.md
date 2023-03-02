@@ -16,6 +16,7 @@ For more info about a specific chapter, navigate to that chapter's directory and
 8. [List Collections](/08-list-collections)
 9. [Exception Handling](/09-exception-handling/)
 10. [Map Collections](/10-map-collections/)
+11. [ Inheritance](/11-inheritance/)
 
 #### Miscellaneous Content
 
