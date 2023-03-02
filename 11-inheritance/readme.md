@@ -365,3 +365,10 @@ public void wear() {
 ```
 
 The overridden abstract methods can have implementation as specific as need for that particular child class.
+
+## The `Object` Class
+
+- Root parent of every other class in Java
+- Defines methods like `equals()`, `toString()`, etc.
+- Since it is the root class for all classes, they all inherit it's methods
+- These methods can be overridden too like we do with `toString()` to print an object in a readable and useful form.

@@ -14,6 +14,9 @@ public class Main {
         Pants pants = new Pants(120.0, "Navy Blue", "Nike", 32, 56);
         pants.fold();
         productStore(pants);
+
+        System.out.println("\n\t" + shirt);
+        System.out.println("\n\t" + pants);
     }
 
     // public static void pantStore(Pants pants) {

@@ -43,5 +43,11 @@ public abstract class Product {
     System.out.println("Folding my " + this.brand + " " + this.color + " " + this.getClass().getSimpleName() + "...");
   }
 
+  @Override
+  public String toString() {
+    return this.getClass().getSimpleName().toUpperCase() + ": " + this.brand + " " + this.color + " "
+        + this.getClass().getSimpleName() + " for $" + this.price + ".";
+  }
+
   public abstract void wear();
 }
