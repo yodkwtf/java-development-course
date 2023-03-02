@@ -154,8 +154,9 @@ Instead of using the child class specific getters, we can use the parent class g
 
 ## `super` keyword
 
-- Calls the parent constructor to update the inherited fields
-- Used to send constructor parameters from child class to the parent class
+- Refers to the parent class of a class
+- `super()` - Invokes the parent constructor to update the inherited fields
+- `super.member` - Used to access member (fields/methods) of a parent class from any child class
 
 Here, the parent class expects 3 arguments for the fields that will be inherited by it's child classes
 
@@ -245,3 +246,53 @@ Now the 3 arguments are passed to the `super` constructor which means the constr
 These 3 fields are updated when the parent constructor is called and the rest of the child specific fields are updated by the respective child class constructors.
 
 > Parent class is also called `super` class
+
+## Overriding a Method
+
+- Parent class methods can be overridden in the child class
+- Newly overridden method replaces the previous parent one
+
+#### Example
+
+We had a fold method in Parent class `Product` which folds the clothes.
+
+###### Product.java
+
+```java
+public void fold() {
+  System.out.println("Folding my " + this.brand + " " + this.color + " " + this.getClass().getSimpleName() + "...");
+}
+```
+
+But both the child classes `Shirt` and `Pants` have different ways of being folded so we need to override the parent method.
+
+###### Shirt.java
+
+```java
+@Override
+public void fold() {
+  System.out.println("Lay shirt on a flat surface");
+  System.out.println("Fold the shirt sideways");
+  System.out.println("Bring sleeves in");
+  System.out.println("Fold from bottom to top");
+}
+```
+
+###### Pants.java
+
+```java
+@Override
+public void fold() {
+  System.out.println("Hold pants by waist");
+  System.out.println("Fold pants in half");
+  System.out.println("Fold pants from bottom to top");
+  System.out.println("Fold pants in half");
+}
+```
+
+Now whenever we call the `fold` method from `Shirt` or the `Pants` class, the overridden methods will be called.
+
+#### `@Override`
+
+- Checks to make sure you are actually overriding a parent method
+- Helps reduce programming errors
