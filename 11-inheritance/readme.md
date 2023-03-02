@@ -95,3 +95,59 @@ main() {
   pants.setBrand("Nike");
 }
 ```
+
+## Polymorphism
+
+- Ability of an object to take on multiple forms
+- Child objects can take the form of their parent object
+
+#### Example
+
+The child class `Shirt` can also be considered a `Product`
+
+```java
+// Shirt shirt = new Shirt();
+Product shirt = new Shirt();
+```
+
+However, it is recommended to always use the most specific class instead of the most generic class since the specific child class (`Shirt` in our case) can also have methods of its own and they can't be called by the generic parent class.
+
+```java
+Product shirt = new Shirt();
+shirt.setSize(Size.SMALL); // ❌ error
+
+Shirt shirt = new Shirt();
+shirt.setSize(Size.SMALL); // ✅ works
+```
+
+Using specific class ensures that the class can access every method from the parent class plus the additional ones from the child class.
+
+### Why do we need Polymorphism?
+
+- Flexible and reusable code
+
+Now we don't have to create separate methods for both `Shirt` and `Pants` for a similar task. For example, instead of writing methods like this -
+
+###### Main.java
+
+```java
+public static void pantStore(Pants pants) {
+  System.out.println("Thank your for purchasing " + pants.getBrand() + " pants!");
+}
+
+public static void shirtStore(Shirt shirt) {
+  System.out.println("Thank your for purchasing " + shirt.getBrand() + " shirt!");
+}
+```
+
+We can use something like this -
+
+###### Main.java
+
+```java
+public static void productStore(Product product) {
+  System.out.println("Thank your for purchasing " + product.getBrand() + " " + product.getClass().getSimpleName() + "!");
+}
+```
+
+Instead of using the child class specific getters, we can use the parent class getters which are inherited by all child classes.
