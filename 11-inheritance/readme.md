@@ -296,3 +296,72 @@ Now whenever we call the `fold` method from `Shirt` or the `Pants` class, the ov
 
 - Checks to make sure you are actually overriding a parent method
 - Helps reduce programming errors
+
+## Abstract
+
+Used to create **abstract class** and **abstract methods**
+
+#### Abstract Class
+
+- A class you cannot create objects from
+
+For example, right now the `Product` class is only acting as a parent class to give inheritance to child classes.
+
+If we create an instance object from it -
+
+```java
+Product product = new Product(19.99, "Black", "Puma");
+```
+
+We will get a `product` object we don't know whether it's a shirt or a pant. Hence, there is no need to create objects from the `Product` class and we shouldn't allow it.
+
+We can do this by making it an **abstract** class -
+
+```java
+public abstract class Product {
+  private double price;
+  private String color;
+  private String brand;
+  // more code...
+}
+```
+
+Now if we try to create an object from the **abstract** `Product` parent class, we will get a compile-time error.
+
+#### Abstract Method
+
+- Can only be defined inside an **abstract class**
+- Methods that must be overridden by the child classes
+- Specifies what should be returned and what parameters to expect
+- Doesn't have a body since it's implementation depends on the child class completely
+
+Defined in the abstract class only
+
+###### Product.java
+
+```java
+// Methods
+public abstract void wear();
+```
+
+Child classes are forced to override them
+
+###### Shirt.java
+
+```java
+@Override
+public void wear() {
+  System.out.println("Wearing my " + this.getBrand() + " " + this.getColor() + " Shirt...");
+}
+```
+
+###### Pants.java
+
+```java
+@Override
+public void wear() {
+  System.out.println("Wearing my " + this.getBrand() + " " + this.getColor() + " Pants...");
+}
+```
+
+The overridden abstract methods can have implementation as specific as need for that particular child class.

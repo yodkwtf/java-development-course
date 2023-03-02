@@ -38,4 +38,9 @@ public class Pants extends Product {
         System.out.println("Fold pants from bottom to top");
         System.out.println("Fold pants in half\n");
     }
+
+    @Override
+    public void wear() {
+        System.out.println("Wearing my " + this.getBrand() + " " + this.getColor() + " Pants...");
+    }
 }

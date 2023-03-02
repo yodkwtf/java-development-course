@@ -32,4 +32,8 @@ public class Shirt extends Product {
         System.out.println("Fold from bottom to top\n");
     }
 
+    @Override
+    public void wear() {
+        System.out.println("Wearing my " + this.getBrand() + " " + this.getColor() + " Shirt...");
+    }
 }

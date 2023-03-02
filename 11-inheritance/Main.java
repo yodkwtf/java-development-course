@@ -29,5 +29,6 @@ public class Main {
     public static void productStore(Product product) {
         System.out.println(
                 "Thank your for purchasing " + product.getBrand() + " " + product.getClass().getSimpleName() + "!");
+        product.wear();
     }
 }
