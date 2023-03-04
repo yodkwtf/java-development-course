@@ -134,3 +134,61 @@ prices.stream()
   .map(price -> "$" + price)
   .forEach(price -> System.out.println(price));
 ```
+
+## More Terminal Operations
+
+- Used to terminate the pipeline
+- Some produce a side effect and some return a final result
+- Whatever transformations we apply to the streams, the original data source remains unaffected
+
+#### `toList()` Operation
+
+Terminates the pipeline by returning every element in the stream as a List
+
+```java
+List<String> usernames = Arrays.asList("blueEyedDreamer", "FiercePhoenix", "Wildflower87", "SerendipitousSurprise");
+
+List<String> upperUsernames = usernames.stream()
+  .map(username -> username.toUpperCase())
+  .toList();
+```
+
+#### `reduce()` Operation
+
+Terminates the pipeline by reducing the entire stream to a single value
+
+###### Example 1
+
+```java
+List<Double> earnings = Arrays.asList(40.50, 60.00, 120.50, 20.00, 50.50, 20.00);
+Double totalEarnings = earnings.stream()
+  .reduce(0.0, (subtotal, element) -> subtotal + element);
+// starting point, lambda expression -> BinaryOperator
+
+System.out.println("\nYou've earned $" + totalEarnings); // $ 311.5
+```
+
+###### Example 2
+
+```java
+List<Double> expenses = Arrays.asList(2.50, 4.00, 5.50, 2.00, 5.50, 2.00);
+Double fundsRemaining = expenses.stream()
+  .reduce(100.0, (subtotal, element) -> subtotal - element);
+// starts from 100$ and keeps reducing w each element
+
+System.out.println("\nYou still have $" + fundsRemaining); // $ 78.5
+```
+
+#### `count()` Operation
+
+Terminates the pipeline by counting number of elements in a stream
+
+```java
+List<Integer> numbers = Arrays.asList(1, 1, 1, 2, 2, 1, 1, 2, 2, 2, 2, 3, 4, 1);
+
+int count = (int) numbers.stream()
+  .filter(number -> number == 1)
+  .count();
+
+System.out.println(count);
+```
