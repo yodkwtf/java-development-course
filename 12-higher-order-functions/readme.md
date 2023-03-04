@@ -192,3 +192,38 @@ int count = (int) numbers.stream()
 
 System.out.println(count);
 ```
+
+## Creating Streams
+
+- Streams can be created from various data sources
+- Stream pipelines are not designed to process entire data source at once hence divided into streams
+
+###### Creating Stream from Datasource: Array
+
+```java
+String[] greetings = new String[] { "Hello!", "Hola!", "Bonjour!", "Hallo!" };
+
+Arrays.stream(greetings)
+  .forEach(greeting -> System.out.println(greeting));
+```
+
+- `stream()` methods converts arrays into stream of elements
+- resulting stream can processed by the pipeline one at a time
+
+###### Creating Stream from Datasource: File
+
+```java
+try {
+  // get the path of the file
+  Path path = Paths.get("chorus.txt");
+  // convert into stream of string elements (lines)
+  Files.lines(path).forEach(line -> System.out.println(line));
+}
+catch (IOException e) {
+  System.out.println("Error: " + e.getMessage());
+}
+```
+
+- Since the file path can be null by mistake and will throw IO exception hence we need to handle that
+- `lines()` method reads all the lines of the passed file into a stream of string elements where each element represents a single line of the file
+- basically each line of the file becomes an element of the stream
