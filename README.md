@@ -22,15 +22,15 @@ For info about a specific chapter, navigate to that chapter's directory and chec
 10. [Map Collections](/10-map-collections/)
 11. [Inheritance](/11-inheritance/)
 12. [Higher Order Functions](/12-higher-order-functions/)
-13. [Interface](/13-interface/)
 
-#### Miscellaneous Content
+#### Miscellaneous
 
 - [Immutable Objects](/07-objects/readme.md/#immutable-objects)
 - [Package and Import](/miscellaneous/package-and-import/readme.md)
 - [Static and Final Keywords](/miscellaneous/static-and-final/readme.md)
 - [Enums](/miscellaneous/enums/readme.md)
 - [Big Decimals](/miscellaneous/big-decimals/readme.md)
+- [Interface](/miscellaneous/interface/readme.md)
 
 #### Mini Projects
 
