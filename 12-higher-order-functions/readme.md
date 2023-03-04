@@ -2,8 +2,9 @@
 
 - Makes code a lot more
 - Need to know your intent before running
-- Lambda function is used to show that intent
+- Lambda expressions is used to express that intent
 - Takes in a lambda function to specifies what task to perform
+- Depend/Rely on different types of functional interface for the lambda functions
 
 ## Types of Lambda Functions
 
@@ -20,6 +21,8 @@
 
 Receives a parameter and produces a side-effect - `x -> {code}`
 
+###### `ForEach` relies on a `Consumer`
+
 ```java
 List<String> facts = Arrays.asList(
     "Marie Curie was the first woman to win a Nobel Prize.",
@@ -30,4 +33,20 @@ List<String> facts = Arrays.asList(
 facts.forEach(fact -> System.out.println(fact));
 ```
 
-> ForEach relies on a `Consumer`
+#### Comparator
+
+Receives two parameters and returns an integer - `(x, y) -> {return int}`
+
+###### `sort` relies on a `Comparator`
+
+```java
+List<Integer> integers = Arrays.asList(25, 19, 23, 45, 38, 23, 59, 12);
+
+// Sort the list of integers in ascending order
+integers.sort((right, left) -> {
+  return right.compareTo(left);
+});
+
+// Sort the list of integers in descending order
+integers.sort((right, left) -> left.compareTo(right));
+```
