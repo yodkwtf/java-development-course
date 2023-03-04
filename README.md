@@ -2,9 +2,11 @@
 
 A collection of Java notes, exercises, small projects, and the rest from the Java course I took on Udemy. The course is called [The Complete Java Development Bootcamp](https://www.udemy.com/course/the-complete-java-development-bootcamp/) and it's created by Rayan Slim, Jad Slim, and Jose Portilla.
 
-For more info about a specific chapter, navigate to that chapter's directory and check out the readme file for the documentation.
+The course covers a wide range of topics related to Java programming, including data types, functions, object-oriented programming, exception handling, data structures, and more.
 
 ## Contents
+
+For info about a specific chapter, navigate to that chapter's directory and check out the readme file for the documentation.
 
 #### Chapters
 
@@ -39,7 +41,7 @@ For more info about a specific chapter, navigate to that chapter's directory and
 1. [Hangman (Capstone)](/mini-projects/hangman/)
 1. [Car Dealership (OOPs)](/mini-projects/car-dealership/)
 
-## Resources
+## Java Resources
 
 - [Install Java-v17 SDK](https://aws.amazon.com/corretto/?filtered-posts.sort-by=item.additionalFields.createdDate&filtered-posts.sort-order=desc)
 - [Course Workbooks and Challenges](https://www.learnthepart.com/course/2dfda34d-6bbc-4bd5-8f45-d5999de2f514/a0d30d63-16f5-4702-992a-77b560cbeddd)
