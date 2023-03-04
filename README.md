@@ -1,8 +1,10 @@
-## Java Fundamentals Course
+# Java Fundamentals Course
 
 A collection of Java notes, exercises, small projects, and the rest from the Java course I took on Udemy. The course is called [The Complete Java Development Bootcamp](https://www.udemy.com/course/the-complete-java-development-bootcamp/) and it's created by Rayan Slim, Jad Slim, and Jose Portilla.
 
 For more info about a specific chapter, navigate to that chapter's directory and check out the readme file for the documentation.
+
+## Contents
 
 #### Chapters
 
@@ -16,8 +18,9 @@ For more info about a specific chapter, navigate to that chapter's directory and
 8. [List Collections](/08-list-collections)
 9. [Exception Handling](/09-exception-handling/)
 10. [Map Collections](/10-map-collections/)
-11. [ Inheritance](/11-inheritance/)
-12. [Higher Order Functions and Lambda](/12-higher-order-functions/)
+11. [Inheritance](/11-inheritance/)
+12. [Higher Order Functions](/12-higher-order-functions/)
+13. [Interface](/13-interface/)
 
 #### Miscellaneous Content
 
@@ -36,7 +39,7 @@ For more info about a specific chapter, navigate to that chapter's directory and
 1. [Hangman (Capstone)](/mini-projects/hangman/)
 1. [Car Dealership (OOPs)](/mini-projects/car-dealership/)
 
-#### Resources
+## Resources
 
 - [Install Java-v17 SDK](https://aws.amazon.com/corretto/?filtered-posts.sort-by=item.additionalFields.createdDate&filtered-posts.sort-order=desc)
 - [Course Workbooks and Challenges](https://www.learnthepart.com/course/2dfda34d-6bbc-4bd5-8f45-d5999de2f514/a0d30d63-16f5-4702-992a-77b560cbeddd)
