@@ -1,6 +1,6 @@
 # Java Fundamentals
 
-This files is a collection of the notes I made for all the different topics while following the course. If you'd like to download this file in a PDF format please click the link below.
+This file is a collection of the notes I made for all the different topics while following the course. If you'd like to download this file in a PDF format please click the link below.
 
 [Java Fundamentals Cheatsheet - PDF Download](https://github.com/yodkwtf/my-cheatsheets/raw/main/java/Java%20Fundamentals%20Cheatsheet.pdf)
 
